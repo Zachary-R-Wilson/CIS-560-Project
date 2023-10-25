@@ -1,10 +1,15 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "About Us";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <hr/>
+    <br/>
+</div>
+<div>
+    <h1 class="text-center">Project Summary</h1>
+    <p>We are making a digital Time Block planner inspired by Cal Newport’s Time Block planner. A time block planner is a time productivity planner in which the user segments their day into blocks of time dedicated to a specific task. Along with the time block planner, we will be implementing Cal’s metric tracking for users to keep track of goals that they wish to work towards every day. In addition to the metrics, we will allow the tracking of long-term goals, these could be seen as quarterly goals set by your manager, or just a personal goal of putting hours into getting better at some skill. </p>
 </div>
