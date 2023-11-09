@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aubriana\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
-      "projectName": "TimeBlockPlanner",
-      "projectPath": "C:\\Users\\Aubriana\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
+      "projectUniqueName": "C:\\Users\\Aubriana\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj",
+      "projectName": "TimeBlockData",
+      "projectPath": "C:\\Users\\Aubriana\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj",
       "packagesPath": "C:\\Users\\Aubriana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aubriana\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\obj\\",
+      "outputPath": "C:\\Users\\Aubriana\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -63,9 +63,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
