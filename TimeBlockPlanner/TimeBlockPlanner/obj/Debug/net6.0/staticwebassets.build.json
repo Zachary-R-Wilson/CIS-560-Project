@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VquYLvlMkblfEn8H3cel9UHlu1c0pXrThnVmP9yIfIs=",
+  "Hash": "ouobPsOOVawT4SoTF/H1WzmfBROQUiCZCdCjBEwowmw=",
   "Source": "TimeBlockPlanner",
   "BasePath": "_content/TimeBlockPlanner",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\wwwroot\\css\\TimeBlock.css",
+      "SourceId": "TimeBlockPlanner",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\wwwroot\\",
+      "BasePath": "_content/TimeBlockPlanner",
+      "RelativePath": "css/TimeBlock.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\TimeBlock.css"
     },
     {
       "Identity": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\wwwroot\\favicon.ico",

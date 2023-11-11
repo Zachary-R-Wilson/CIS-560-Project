@@ -1,0 +1,31 @@
+﻿.time-block-planner table {
+    border-collapse: collapse;
+}
+
+.time-block-planner td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.time-block-planner tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.time-block-planner tr:hover {
+    background-color: #ddd;
+}
+
+.time-block-planner th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: white;
+}
+
+.time-block-planner {
+    padding: 10px;
+}
+
+.add-item {
+    display: none;
+}

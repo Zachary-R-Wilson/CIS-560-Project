@@ -1,8 +1,112 @@
 ﻿@page
 @model TimeBlockPlanner.Pages.TimeBlockModel
 @{
-    ViewData["Title"] = "Time Block Planner";
+    ViewData["Title"] = "Time-Block Planner";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>This page will be used for Scheduling your day into blocks of time</p>
+<script>
+    function ShowAdd() {
+        document.getElementById("add-item").style = 'display:block;';
+    }
+
+    function HideAdd() {
+        document.getElementById("add-item").style = 'display:none;';
+    }
+
+    function CancelAdd() {
+        HideAdd();
+        document.getElementById("name").value = '';
+        document.getElementById("description").value = '';
+        document.getElementById("time").value = '';
+    }
+
+    function ShowEdit(tr) {
+        document.getElementById("EditName").value = tr.children[1].innerText;
+        document.getElementById("EditDescription").value = tr.children[2].innerText;
+        document.getElementById("EditTime").value = tr.children[0].innerText;
+        document.getElementById("edit-item").style = 'display:block;';
+    }
+
+    function HideEdit() {
+        document.getElementById("edit-item").style = 'display:none;';
+    }
+
+    function CancelEdit() {
+        HideEdit();
+        document.getElementById("EditName").value = '';
+        document.getElementById("EditDescription").value = '';
+        document.getElementById("EditTime").value = '';
+    }
+</script>
+
+
+<div class="head">
+    <h1>@ViewData["Title"]</h1>
+    <hr/>
+    <p>This page will be used for Scheduling your day into blocks of time</p>
+</div>
+
+<div class="planner">
+    <div class="time-block-planner">
+        @* on click to show details about this event *@
+        <table>
+            <tr>
+                <th style="width:10%;">
+                    Time
+                </th>
+                <th>
+                    Event
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+            @*   Example of the layout*@
+            <tr onclick="ShowEdit(this)">
+                <td>
+                    06:45
+                </td>
+                <td>
+                    Meeting with Jeff
+                </td>
+                <td>
+                    Discussing business plans and such.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <button class="time-block-button" onClick="ShowAdd()">Schedule Time</button>
+    </div>
+</div>
+
+
+
+<form id="add-item" style="display:none;">
+    <label for="name">Name this Event:</label>
+    <input type="text" id="name" name="name" required />
+    <br />
+    <label for="description">Description of the Event:</label>
+    <input type="text" id="description" name="description" required />
+    <br />
+    <label for="time">Select Event Time:</label>
+    <input type="time" step="900" id="time" name="time" required />
+    <br />
+    <input type="submit" onClick="HideAdd()" />
+    <input type="button" id="cancel" onClick="CancelAdd()" value="cancel" />
+</form>
+
+<form id="edit-item" style="display:none;">
+    <label for="name">Name this Event:</label>
+    <input type="text" id="EditName" name="name" required />
+    <br />
+    <label for="description">Description of the Event:</label>
+    <input type="text" id="EditDescription" name="description" required />
+    <br />
+    <label for="time">Select Event Time:</label>
+    <input type="time" step="900" id="EditTime" name="time" required />
+    <br />
+    <input type="submit" onClick="HideEdit()" />
+    <input type="button" id="cancel" onClick="CancelEdit()" value="cancel" />
+</form>
