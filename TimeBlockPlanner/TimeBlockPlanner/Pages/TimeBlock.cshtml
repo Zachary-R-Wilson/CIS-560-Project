@@ -1,8 +1,123 @@
 ﻿@page
 @model TimeBlockPlanner.Pages.TimeBlockModel
 @{
-    ViewData["Title"] = "Time Block Planner";
+    ViewData["Title"] = "Time-Block Planner";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>This page will be used for Scheduling your day into blocks of time</p>
+<script>
+    function ShowAdd() {
+        document.getElementById("popupForm").style = 'display:block;';
+    }
+
+    function HideAdd() {
+        document.getElementById("popupForm").style = 'display:none;';
+    }
+
+    window.addEventListener("click", function (event) {
+        if (event.target == popupForm) {
+            CancelAdd();
+        }
+    });
+
+    function CancelAdd() {
+        HideAdd();
+        document.getElementById("name").value = '';
+        document.getElementById("description").value = '';
+        document.getElementById("time").value = '';
+    }
+
+    function EditRow(tr) {
+        document.getElementById("TimeBlockId").value = tr.children[0].innerText;
+        document.getElementById("name").value = tr.children[2].innerText;
+        document.getElementById("description").value = tr.children[3].innerText;
+        document.getElementById("time").value = tr.children[1].innerText;
+        document.getElementById("popupForm").style = 'display:block;';
+    }
+</script>
+
+
+<div class="head">
+    <h1>@ViewData["Title"]</h1>
+    <hr/>
+    <p>This page will be used for Scheduling your day into blocks of time.</p>
+    <br/>
+    <p>Click on an event to make changes.</p>
+</div>
+
+<div class="planner">
+    <div class="time-block-planner">
+        <table class="table">
+            <tr>
+                <th style="display:none;">
+                    Id
+                </th>
+                <th style="width:10%;">
+                    Time
+                </th>
+                <th>
+                    Event
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+            @* Example of the layout *@
+            <tr onclick="EditRow(this)">
+                <td style="display:none;">
+                    1
+                </td>
+                <td>
+                    06:45
+                </td>
+                <td>
+                    Meeting with Jeff
+                </td>
+                <td>
+                    Discussing business plans and such.
+                </td>
+            </tr>
+            @* 
+               -- This will be used to create the table on the page --
+            @foreach (timeBlock in @Model.TimeBlocks)
+            {
+                <tr onclick="EditRow(this)">
+                    <td style="display:none;">
+                        @timeBlock.TimeBlockId
+                    </td>
+                    <td>
+                        @timeBlock.TimePeriod
+                    </td>
+                    <td>
+                        @timeBlock.Name
+                    </td>
+                    <td>
+                        @timeBlock.Description
+                    </td>
+                </tr>
+            }
+            *@
+
+        </table>
+    </div>
+
+    <div>
+        <button class="time-block-button" onClick="ShowAdd()">Schedule Time</button>
+    </div>
+</div>
+
+<div id="popupForm" class="popup-form">
+    <form class="popup-content" id="add-item" method="post">
+        <input type="hidden" id="TimeBlockId" name="TimeBlockId" />
+        <label for="name">Name this Event:</label>
+        <input type="text" id="name" name="name" required />
+        <br />
+        <label for="description">Description of the Event:</label>
+        <input type="text" id="description" name="description" required />
+        <br />
+        <label for="time">Select Event Time:</label>
+        <input type="time" step="900" id="time" name="time" required />
+        <br />
+        <input type="submit" onsubmit="HideAdd()" />
+        <input type="button" id="cancel" onClick="CancelAdd()" value="cancel" />
+    </form>
+</div>
