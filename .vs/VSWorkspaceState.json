@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TimeBlockPlanner",
+    "\\TimeBlockPlanner\\TimeBlockData",
+    "\\TimeBlockPlanner\\TimeBlockData\\bin",
+    "\\TimeBlockPlanner\\TimeBlockData\\Models",
+    "\\TimeBlockPlanner\\TimeBlockData\\obj",
+    "\\TimeBlockPlanner\\TimeBlockPlanner"
   ],
-  "SelectedNode": "\\TimeBlockPlanner.sln",
   "PreviewInSolutionExplorer": false
 }
