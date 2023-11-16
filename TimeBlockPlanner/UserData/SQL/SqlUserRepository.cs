@@ -66,7 +66,7 @@ namespace UserData.SQL
 
                         var userId = (int)command.Parameters["UserId"].Value;
 
-                        return new User(string firstName, string lastName, string email, string username, string passwordHash, bool isDeleted);
+                        return new User(firstName, lastName, email, username, passwordHash, isDeleted);
                     }
                 }
             }
