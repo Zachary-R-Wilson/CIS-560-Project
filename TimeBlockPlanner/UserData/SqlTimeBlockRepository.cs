@@ -6,8 +6,13 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using TimeBlockData.Models;
+using System.Data.SqlClient;
+using System.Data;
+using System.Transactions;
 
-namespace UserData.SQL
+
+namespace UserData
 {
     public class SqlTimeBlockRepository
     {

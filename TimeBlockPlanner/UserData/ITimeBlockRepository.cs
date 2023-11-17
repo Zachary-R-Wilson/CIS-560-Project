@@ -4,8 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using TimeBlockData.Models;
 
-namespace UserData.SQL
+namespace UserData
 {
     public class ITimeBlockRepository
     {
