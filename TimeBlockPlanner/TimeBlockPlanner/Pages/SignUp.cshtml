@@ -5,4 +5,34 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>This page will be used for creating a new account for a new user.</p>
+<hr />
+
+<div id="signUpForm">
+    <form id="signUp" method="post">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required />
+        <br />
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required />
+        <br />
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <br />
+        <label for="passwordConfirm">Confirm Password:</label>
+        <input type="password" id="passwordConfirm" name="passwordConfirm" required />
+        <br />
+        <input type="submit" />
+    </form>
+</div>
+
+<div>
+    <hr />
+    <p>Already have an account?</p>
+    <p>Sign in <a asp-area="" asp-page="/SignIn">here.</a></p>
+</div>
