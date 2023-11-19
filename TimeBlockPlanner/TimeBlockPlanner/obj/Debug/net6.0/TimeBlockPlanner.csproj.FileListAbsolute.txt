@@ -54,3 +54,10 @@ C:\Users\Aubriana\Source\Repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner
 C:\Users\Aubriana\Source\Repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\obj\Debug\net6.0\TimeBlockPlanner.pdb
 C:\Users\Aubriana\Source\Repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\obj\Debug\net6.0\TimeBlockPlanner.genruntimeconfig.cache
 C:\Users\Aubriana\Source\Repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\obj\Debug\net6.0\ref\TimeBlockPlanner.dll
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\bin\Debug\net6.0\TimeBlockData.deps.json
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\bin\Debug\net6.0\TimeBlockData.runtimeconfig.json
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\bin\Debug\net6.0\TimeBlockData.exe
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\bin\Debug\net6.0\TimeBlockData.dll
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\bin\Debug\net6.0\TimeBlockData.pdb
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\obj\Debug\net6.0\TimeBlockPlanner.csproj.AssemblyReference.cache
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\obj\Debug\net6.0\TimeBlockPlanner.csproj.CopyComplete

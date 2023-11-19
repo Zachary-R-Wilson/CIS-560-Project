@@ -5,8 +5,21 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>This page will be used for existing users to sign-in</p>
-<br/>
+@* <p>This page will be used for existing users to sign-in</p> *@
+<hr/>
+
+<div id="loginForm">
+    <form id="login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <br />
+        <input type="submit" onsubmit="HideAdd()" />
+    </form>
+</div>
+
 <div>
     <hr/>
     <p>Don't have an account yet?</p>

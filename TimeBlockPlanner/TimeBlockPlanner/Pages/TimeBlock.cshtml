@@ -35,6 +35,9 @@
     }
 </script>
 
+<div class="userId" style="display: none;">
+    <h5 id="UserId">@Model.userId</h5>
+</div>
 
 <div class="head">
     <h1>@ViewData["Title"]</h1>
@@ -76,13 +79,13 @@
                     Discussing business plans and such.
                 </td>
             </tr>
-            @* 
-               -- This will be used to create the table on the page --
-            @foreach (timeBlock in @Model.TimeBlocks)
+            
+            @* -- This will be used to create the table on the page -- *@
+            @foreach (TimeBlockData.Models.TimeBlock timeBlock in Model.TimeBlocks)
             {
                 <tr onclick="EditRow(this)">
                     <td style="display:none;">
-                        @timeBlock.TimeBlockId
+                        @timeBlock.TimeBlockID
                     </td>
                     <td>
                         @timeBlock.TimePeriod
@@ -95,7 +98,7 @@
                     </td>
                 </tr>
             }
-            *@
+           
 
         </table>
     </div>

@@ -1,0 +1,14 @@
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\bin\Debug\net6.0\TimeBlockData.exe
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\bin\Debug\net6.0\TimeBlockData.deps.json
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\bin\Debug\net6.0\TimeBlockData.runtimeconfig.json
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\bin\Debug\net6.0\TimeBlockData.dll
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\bin\Debug\net6.0\TimeBlockData.pdb
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\obj\Debug\net6.0\TimeBlockData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\obj\Debug\net6.0\TimeBlockData.AssemblyInfoInputs.cache
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\obj\Debug\net6.0\TimeBlockData.AssemblyInfo.cs
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\obj\Debug\net6.0\TimeBlockData.csproj.CoreCompileInputs.cache
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\obj\Debug\net6.0\TimeBlockData.dll
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\obj\Debug\net6.0\refint\TimeBlockData.dll
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\obj\Debug\net6.0\TimeBlockData.pdb
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\obj\Debug\net6.0\TimeBlockData.genruntimeconfig.cache
+C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockData\obj\Debug\net6.0\ref\TimeBlockData.dll

@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Caching.Memory;
+using TimeBlockData.Models;
 
 namespace TimeBlockPlanner.Pages
 {
@@ -9,17 +11,48 @@ namespace TimeBlockPlanner.Pages
         /// The timeblocks being displayed from the server to the user
         /// </summary>
         /// <remarks>The type here is not int but rather the model type.</remarks>
-        public IEnumerable<int> TimeBlocks { get; set; }
+        public IEnumerable<TimeBlock> TimeBlocks { get; set; }
 
+        /// <summary>
+        /// Cache Storage to retrieve the userId
+        /// </summary>
+        private readonly IMemoryCache _cache;
+
+        public int userId 
+        { 
+            get
+            {
+                int uId;
+                _cache.TryGetValue("userId", out uId);
+                return uId;
+            } 
+        }
+
+        /// <summary>
+        /// Initializes the private Cache field
+        /// </summary>
+        public TimeBlockModel(IMemoryCache cache)
+        {
+            _cache = cache;
+        }
 
         /// <summary>
         /// Method to handle get requests on the page
         /// </summary>
         public void OnGet()
         {
+            // Check for the userId to see if the user is logged in.
+            int uId;
+            _cache.TryGetValue("userId", out uId);
+            if (uId == default(int))
+            {
+                Response.Redirect("SignIn");
+            }
+            _cache.Get("");
+
             // This is where a call to the server will be made to get the information to display the data to the frontend user
-                                // new list<int> will be replaced with a call to the server for data.
-            this.TimeBlocks = new List<int>();
+            // new list<int> will be replaced with a call to the server for data.
+            this.TimeBlocks = new List<TimeBlock>();
         }
 
         /// <summary>
