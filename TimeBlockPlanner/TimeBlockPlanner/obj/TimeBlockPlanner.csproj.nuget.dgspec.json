@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj": {}
+    "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj": {
+    "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj",
-        "projectName": "TimeBlockData",
-        "projectPath": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj",
-        "packagesPath": "C:\\Users\\Steel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\obj\\",
+        "projectUniqueName": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
+        "projectName": "TimeBlockPlanner",
+        "projectPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
+        "packagesPath": "C:\\Users\\rphaz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Steel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rphaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,65 +51,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
-        "projectName": "TimeBlockPlanner",
-        "projectPath": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
-        "packagesPath": "C:\\Users\\Steel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Steel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj": {
-                "projectPath": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
@@ -117,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

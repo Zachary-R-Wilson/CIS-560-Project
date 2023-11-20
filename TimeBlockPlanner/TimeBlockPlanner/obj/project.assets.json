@@ -1,45 +1,26 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
-      "TimeBlockData/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/TimeBlockData.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TimeBlockData.dll": {}
-        }
-      }
-    }
+    "net6.0": {}
   },
-  "libraries": {
-    "TimeBlockData/1.0.0": {
-      "type": "project",
-      "path": "../TimeBlockData/TimeBlockData.csproj",
-      "msbuildProject": "../TimeBlockData/TimeBlockData.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": [
-      "TimeBlockData >= 1.0.0"
-    ]
+    "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Steel\\.nuget\\packages\\": {}
+    "C:\\Users\\rphaz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
+      "projectUniqueName": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
       "projectName": "TimeBlockPlanner",
-      "projectPath": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
-      "packagesPath": "C:\\Users\\Steel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\obj\\",
+      "projectPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
+      "packagesPath": "C:\\Users\\rphaz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Steel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rphaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -52,11 +33,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj": {
-              "projectPath": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -87,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
