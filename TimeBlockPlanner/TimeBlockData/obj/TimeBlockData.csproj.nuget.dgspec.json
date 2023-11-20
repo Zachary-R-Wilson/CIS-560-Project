@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj": {}
+    "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj": {
+    "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj",
+        "projectUniqueName": "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj",
         "projectName": "TimeBlockData",
-        "projectPath": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj",
-        "packagesPath": "C:\\Users\\Steel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Steel\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\obj\\",
+        "projectPath": "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\TimeBlockData.csproj",
+        "packagesPath": "C:\\Users\\rphaz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Steel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rphaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
