@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{A510
 	ProjectSection(SolutionItems) = preProject
 		CreateDatabase.ps1 = CreateDatabase.ps1
 		CreateDatabase.sql = CreateDatabase.sql
+		DropDatabase.ps1 = DropDatabase.ps1
 	EndProjectSection
 EndProject
 Global
