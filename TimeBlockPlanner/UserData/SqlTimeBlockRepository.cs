@@ -13,108 +13,110 @@ using System.Data.SqlClient;
 
 namespace UserData
 {
-    public class SqlTimeBlockRepository
+    public class SqlTimeBlockRepository : ITimeBlockRepository
     {
-        public class SqlAddressRepository : ITimeBlockRepository
+        private readonly string connectionString;
+
+        public SqlTimeBlockRepository(string connectionString)
         {
-            private readonly string connectionString;
+            this.connectionString = connectionString;
+        }
 
-            public SqlAddressRepository(string connectionString)
-            {
-                this.connectionString = connectionString;
-            }
+        public void SaveTimeBlock(int timeBlockId, int userId, string name, string description, DateTime date, DateTime timePeriod)
+        {
+            // Verify parameters.
+            if (timeBlockId == null)
+                throw new ArgumentNullException(nameof(timeBlockId));
 
-            public void SaveTimeBlock(int timeBlockId, int userId, string name, string description, DateTime date, DateTime timePeriod)
-            {
-                // Verify parameters.
-                if (timeBlockId == null)
-                    throw new ArgumentNullException(nameof(timeBlockId));
+            if (userId == null)
+                throw new ArgumentNullException(nameof(userId));
 
-                if (userId == null)
-                    throw new ArgumentNullException(nameof(userId));
+            if (name == null)
+                throw new ArgumentNullException(nameof(name));
 
-                if (name == null)
-                    throw new ArgumentNullException(nameof(name));
+            if (description == null)
+                throw new ArgumentNullException(nameof(description));
 
-                if (description == null)
-                    throw new ArgumentNullException(nameof(description));
+            if (date == null)
+                throw new ArgumentNullException(nameof(date));
 
-                if (date == null)
-                    throw new ArgumentNullException(nameof(date));
-
-                if (timePeriod == null)
-                    throw new ArgumentNullException(nameof(timePeriod));
+            if (timePeriod == null)
+                throw new ArgumentNullException(nameof(timePeriod));
 
 
-                // Save address to the database.
-                using (var transaction = new TransactionScope())
-                {
-                    using (var connection = new SqlConnection(connectionString))
-                    {
-                        using (var command = new SqlCommand("User.SaveTimeBlock", connection))
-                        {
-                            command.CommandType = CommandType.StoredProcedure;
-
-                            command.Parameters.AddWithValue("TimeBlockId", timeBlockId);
-                            command.Parameters.AddWithValue("UserId", userId);
-                            command.Parameters.AddWithValue("Name", name);
-                            command.Parameters.AddWithValue("Description", description);
-                            command.Parameters.AddWithValue("Date", date);
-                            command.Parameters.AddWithValue("Time", timePeriod);
-
-
-                            connection.Open();
-
-                            command.ExecuteNonQuery();
-
-                            transaction.Complete();
-                        }
-                    }
-                }
-            }
-
-            public IReadOnlyList<TimeBlock> RetrieveTimeblocks(int userId)
+            // Save address to the database.
+            using (var transaction = new TransactionScope())
             {
                 using (var connection = new SqlConnection(connectionString))
                 {
-                    using (var command = new SqlCommand("User.RetrieveTimeBlock", connection))
+                    using (var command = new SqlCommand("User.SaveTimeBlock", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
+                        command.Parameters.AddWithValue("TimeBlockId", timeBlockId);
                         command.Parameters.AddWithValue("UserId", userId);
+                        command.Parameters.AddWithValue("Name", name);
+                        command.Parameters.AddWithValue("Description", description);
+                        command.Parameters.AddWithValue("Date", date);
+                        command.Parameters.AddWithValue("Time", timePeriod);
+
 
                         connection.Open();
 
-                        using (var reader = command.ExecuteReader())
-                            return TranslateAddresses(reader);
+                        command.ExecuteNonQuery();
+
+                        transaction.Complete();
                     }
                 }
             }
+        }
 
-            private IReadOnlyList<TimeBlock> TranslateAddresses(SqlDataReader reader)
+
+        public IReadOnlyList<TimeBlock> RetrieveTimeBlocks(int userId)
+        {
+            using (var connection = new SqlConnection(connectionString))
             {
-                var addresses = new List<TimeBlock>();
-
-                var timeBlockIdIdOrdinal = reader.GetOrdinal("TimeBlockId");
-                var userIdOrdinal = reader.GetOrdinal("UserId");
-                var nameOrdinal = reader.GetOrdinal("name");
-                var descriptionOrdinal = reader.GetOrdinal("description");
-                var dateOrdinal = reader.GetOrdinal("Date");
-                var timePeriodOrdinal = reader.GetOrdinal("TimePeriod");
-
-                while (reader.Read())
+                using (var command = new SqlCommand("User.RetrieveTimeBlock", connection))
                 {
-                    addresses.Add(new TimeBlock(
-                       reader.GetInt32(timeBlockIdIdOrdinal),
-                       reader.GetString(userIdOrdinal),
-                       reader.IsDBNull(nameOrdinal),
-                       reader.GetString(descriptionOrdinal),
-                       reader.GetString(dateOrdinal),
-                       reader.GetString(timePeriodOrdinal)));
-                }
+                    command.CommandType = CommandType.StoredProcedure;
 
-                return addresses;
+                    command.Parameters.AddWithValue("UserId", userId);
+
+                    connection.Open();
+
+                    using (var reader = command.ExecuteReader())
+                        return TranslateAddresses(reader);
+                }
             }
         }
+
+
+
+        private IReadOnlyList<TimeBlock> TranslateAddresses(SqlDataReader reader)
+        {
+            var addresses = new List<TimeBlock>();
+
+            var timeBlockIdIdOrdinal = reader.GetOrdinal("TimeBlockId");
+            var userIdOrdinal = reader.GetOrdinal("UserId");
+            var nameOrdinal = reader.GetOrdinal("name");
+            var descriptionOrdinal = reader.GetOrdinal("description");
+            var dateOrdinal = reader.GetOrdinal("Date");
+            var timePeriodOrdinal = reader.GetOrdinal("TimePeriod");
+
+            while (reader.Read())
+            {
+                addresses.Add(new TimeBlock(
+                   reader.GetInt32(timeBlockIdIdOrdinal),
+                   reader.GetInt32(userIdOrdinal),
+                   reader.GetString(nameOrdinal),
+                   reader.GetString(descriptionOrdinal),
+                   reader.GetDateTime(dateOrdinal),
+                   reader.GetString(timePeriodOrdinal)));
+            }
+
+            return addresses;
+        }
+
+        
     }
 }

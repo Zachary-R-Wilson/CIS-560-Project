@@ -8,9 +8,9 @@ using TimeBlockData.Models;
 
 namespace UserData
 {
-    public class ITimeBlockRepository
+    public interface ITimeBlockRepository
     {
-        IReadOnlyList<TimeBlock> RetrieveTimeBlock(int userId);
+        IReadOnlyList<TimeBlock> RetrieveTimeBlocks(int userId);
 
         void SaveTimeBlock(int timeBlockId, int userId, string name, string description, DateTime date, DateTime timePeriod);
 
