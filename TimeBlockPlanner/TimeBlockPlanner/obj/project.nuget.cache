@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k062Kl7OUvfoXc5ItJHp2vxqnE8X9NXOKyGyAu+DEbRZKOoaXkb3386xJenDVvQDR055NXteURJYRwsZQ5flVA==",
+  "dgSpecHash": "scnWjh8A0NNTzMJx+BT+PoXpEaTGYaYJDCx9evPY/NbrqlyFfheLC3g59+/exxGUg/xOn4KqQ+2L3AMwH8RrYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
+  "projectFilePath": "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rphaz\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\rphaz\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

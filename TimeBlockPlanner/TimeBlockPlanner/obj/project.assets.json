@@ -493,11 +493,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
+      "projectUniqueName": "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
       "projectName": "TimeBlockPlanner",
-      "projectPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
+      "projectPath": "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
       "packagesPath": "C:\\Users\\rphaz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\obj\\",
+      "outputPath": "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rphaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -514,8 +514,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj": {
-              "projectPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj"
+            "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj": {
+              "projectPath": "C:\\Users\\rphaz\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj"
             }
           }
         }
