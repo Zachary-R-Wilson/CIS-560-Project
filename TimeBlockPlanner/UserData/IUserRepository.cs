@@ -16,7 +16,6 @@ namespace UserData
         /// <returns>IReadOnlyList<User> list containing all users in the database</returns>
         IReadOnlyList<User> RetrieveUsers();
 
-
         /// <summary>
         /// Fetches the user associated with the given <paramref name="userId"/> if they exist.
         /// </summary>
