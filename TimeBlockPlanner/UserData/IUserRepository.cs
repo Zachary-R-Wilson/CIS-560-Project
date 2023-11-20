@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TimeBlockData.Models;
+using UserData.Models;
 
 
 namespace UserData
 {
-    public class IUserRepository
+    public interface IUserRepository
     {
         /// <summary>
         /// Retrieves all users in the database
         /// </summary>
         /// <returns>IReadOnlyList<User> list containing all users in the database</returns>
-        IReadOnlyList<User> RetrieveUser();
+        IReadOnlyList<User> RetrieveUsers();
 
         /// <summary>
         /// Fetches the user associated with the given <paramref name="userId"/> if they exist.

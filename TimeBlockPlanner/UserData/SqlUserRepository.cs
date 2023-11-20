@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Transactions;
-using TimeBlockData.Models;
+using UserData.Models;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -52,7 +52,7 @@ namespace UserData
                         command.Parameters.AddWithValue("LastName", lastName);
                         command.Parameters.AddWithValue("Email", email);
                         command.Parameters.AddWithValue("Username", username);
-                        command.Parameters.AddWithValue("Password Hash", passwordHash);
+                        command.Parameters.AddWithValue("PasswordHash", passwordHash);
                         command.Parameters.AddWithValue("IsDeleted", isDeleted);
 
                         var u = command.Parameters.Add("UserId", SqlDbType.Int);
@@ -66,7 +66,7 @@ namespace UserData
 
                         var userId = (int)command.Parameters["UserId"].Value;
 
-                        return new User(firstName, lastName, email, username, passwordHash, isDeleted);
+                        return new User(userId, firstName, lastName, email, username, passwordHash, isDeleted);
                     }
                 }
             }
@@ -170,7 +170,8 @@ namespace UserData
                reader.GetString(emailOrdinal),
                reader.GetString(usernameOrdinal),
                reader.GetString(passwordHashOrdinal),
-               reader.GetBool(isDeletedOrdinal));
+               reader.GetBoolean(isDeletedOrdinal));
+       
         }
 
         private IReadOnlyList<User> TranslateUsers(SqlDataReader reader)
@@ -194,7 +195,7 @@ namespace UserData
                    reader.GetString(emailOrdinal),
                    reader.GetString(usernameOrdinal),
                    reader.GetString(passwordHashOrdinal),
-                   reader.GetBool(isDeletedOrdinal)));
+                   reader.GetBoolean(isDeletedOrdinal)));
             }
 
             return users;
