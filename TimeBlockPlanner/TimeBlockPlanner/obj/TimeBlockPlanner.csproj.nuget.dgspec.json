@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj": {}
+    "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj": {
+    "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
+        "projectUniqueName": "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
         "projectName": "TimeBlockPlanner",
-        "projectPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
-        "packagesPath": "C:\\Users\\rphaz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\obj\\",
+        "projectPath": "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\TimeBlockPlanner.csproj",
+        "packagesPath": "C:\\Users\\rphazell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\TimeBlockPlanner\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\rphaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rphazell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj": {
-                "projectPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj"
+              "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj": {
+                "projectPath": "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj"
               }
             }
           }
@@ -62,21 +67,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj": {
+    "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj",
+        "projectUniqueName": "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj",
         "projectName": "UserData",
-        "projectPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj",
-        "packagesPath": "C:\\Users\\rphaz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rphaz\\Source\\Repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\obj\\",
+        "projectPath": "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\UserData.csproj",
+        "packagesPath": "C:\\Users\\rphazell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rphazell\\source\\repos\\CIS-560-Project\\TimeBlockPlanner\\UserData\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\rphaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rphazell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,6 +93,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -123,7 +133,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
