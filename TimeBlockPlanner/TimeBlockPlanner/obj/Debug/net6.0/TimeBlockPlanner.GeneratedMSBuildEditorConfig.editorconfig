@@ -9,11 +9,11 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TimeBlockPlanner
 build_property.RootNamespace = TimeBlockPlanner
-build_property.ProjectDir = C:\Users\rphazell\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\
+build_property.ProjectDir = C:\Users\rphazell\Source\Repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\rphazell\source\repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner
+build_property.MSBuildProjectDirectory = C:\Users\rphazell\Source\Repos\CIS-560-Project\TimeBlockPlanner\TimeBlockPlanner
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/rphazell/Source/Repos/CIS-560-Project/TimeBlockPlanner/TimeBlockPlanner/Pages/Error.cshtml]

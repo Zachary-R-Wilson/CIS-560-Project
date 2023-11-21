@@ -29,3 +29,5 @@ msbuild.err
 msbuild.wrn
 
 .vs/
+/TimeBlockPlanner/.vs/TimeBlockPlanner/v17/.futdcache.v2
+/TimeBlockPlanner/TimeBlockPlanner/obj/Debug/net6.0/TimeBlockPlanner.assets.cache
