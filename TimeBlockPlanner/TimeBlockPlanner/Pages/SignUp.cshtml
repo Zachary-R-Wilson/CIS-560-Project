@@ -9,25 +9,31 @@
 
 <div id="signUpForm">
     <form id="signUp" method="post">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required />
+        <label class="form-label" for="firstName">First Name:</label>
+        <input type="text" asp-for="CreateUser.firstName" class="form-control" />
+        <span class="text-danger" asp-validation-for="CreateUser.firstName"></span>
         <br />
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required />
+        <label class="form-label" for="lastName">Last Name:</label>
+        <input type="text" asp-for="CreateUser.lastName" class="form-control" />
+        <span class="text-danger" asp-validation-for="CreateUser.lastName"></span>
         <br />
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required />
+        <label class="form-label" for="username">Username:</label>
+        <input type="text" asp-for="CreateUser.username" class="form-control" />
+        <span class="text-danger" asp-validation-for="CreateUser.username"></span>
         <br />
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <label class="form-label" for="email">Email:</label>
+        <input type="email" asp-for="CreateUser.email" class="form-control" />
+        <span class="text-danger" asp-validation-for="CreateUser.email"></span>
         <br />
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+        <label class="form-label" for="password">Password:</label>
+        <input type="password" asp-for="CreateUser.password" class="form-control" />
+        <span class="text-danger" asp-validation-for="CreateUser.password"></span>
         <br />
-        <label for="passwordConfirm">Confirm Password:</label>
-        <input type="password" id="passwordConfirm" name="passwordConfirm" required />
+        <label class="form-label" for="passwordConfirm">Confirm Password:</label>
+        <input type="password" asp-for="CreateUser.passwordConfirm" class="form-control" />
+        <span class="text-danger" asp-validation-for="CreateUser.passwordConfirm"></span>
         <br />
-        <input type="submit" />
+        <input type="submit" class="btn btn-primary" />
     </form>
 </div>
 
