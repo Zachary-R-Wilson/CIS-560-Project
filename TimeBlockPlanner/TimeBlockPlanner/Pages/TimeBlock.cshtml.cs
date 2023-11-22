@@ -10,7 +10,6 @@ namespace TimeBlockPlanner.Pages
         /// <summary>
         /// The timeblocks being displayed from the server to the user
         /// </summary>
-        /// <remarks>The type here is not int but rather the model type.</remarks>
         public IEnumerable<TimeBlock> TimeBlocks { get; set; }
 
         /// <summary>

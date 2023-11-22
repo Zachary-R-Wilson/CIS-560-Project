@@ -3,6 +3,132 @@
 @{
     ViewData["Title"] = "Goal Planner";
 }
-<h1>@ViewData["Title"]</h1>
+<script>
+    function ShowAdd() {
+        document.getElementById("popupForm").style = 'display:block;';
+    }
 
-<p>This page will be used for keeping track of longterm goals</p>
+    function HideAdd() {
+        document.getElementById("popupForm").style = 'display:none;';
+    }
+
+    window.addEventListener("click", function (event) {
+        if (event.target == popupForm) {
+            CancelAdd();
+        }
+    });
+
+    function CancelAdd() {
+        HideAdd();
+        document.getElementById("name").value = '';
+        document.getElementById("description").value = '';
+        document.getElementById("time").value = '';
+    }
+
+    function EditRow(tr) {
+        document.getElementById("GoalsId").value = tr.children[0].innerText;
+        document.getElementById("name").value = tr.children[1].innerText;
+        document.getElementById("description").value = tr.children[2].innerText;
+        document.getElementById("startDate").value = tr.children[3].innerText;
+        document.getElementById("endDate").value = tr.children[4].innerText;
+        document.getElementById("popupForm").style = 'display:block;';
+    }
+</script>
+
+<div class="head">
+    <h1>@ViewData["Title"]</h1>
+    <hr />
+    <p>This page will be used for Scheduling your day into blocks of time.</p>
+    <br />
+    <p>Click on an event to make changes.</p>
+</div>
+
+<div class="planner">
+    <div class="time-block-planner">
+        <table class="table">
+            <tr>
+                <th style="display:none;">
+                    Id
+                </th>
+                <th>
+                    Goal
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    End Date
+                </th>
+            </tr>
+            @* Example of the layout *@
+            <tr onclick="EditRow(this)">
+                <td style="display:none;">
+                    1
+                </td>
+                <td>
+                    Meeting with Jeff
+                </td>
+                <td>
+                    Discussing business plans and such.
+                </td>
+                <td>
+                    @DateTime.Now
+                </td>
+                <td>
+                    @DateTime.Now
+                </td>
+            </tr>
+
+            @* -- This will be used to create the table on the page -- *@
+@*             @foreach (TimeBlockData.Models.Goals goal in Model.Goals)
+            {
+                <tr onclick="EditRow(this)">
+                    <td style="display:none;">
+                        @goal.GoalsID
+                    </td>
+                    <td>
+                        @goal.Name
+                    </td>
+                    <td>
+                        @goal.Description
+                    </td>
+                    <td>
+                        @goal.StartDate
+                    </td>
+                    <td>
+                        @goal.EndDate
+                    </td>
+                </tr>
+            } *@
+
+
+        </table>
+    </div>
+
+    <div>
+        <button class="btn btn-primary" onClick="ShowAdd()">Schedule Time</button>
+    </div>
+</div>
+
+<div id="popupForm" class="popup-form">
+    <form class="popup-content" id="add-item" method="post">
+        <input type="hidden" id="GoalsId" name="GoalsId" />
+        <label for="name" class="form-label">Name this Event:</label>
+        <input class="form-control" type="text" id="name" name="name" required />
+        <br />
+        <label class="form-label" for="description">Description of the Event:</label>
+        <input class="form-control" type="text" id="description" name="description" required />
+        <br />
+        <label class="form-label" for="startDate">Select a Start Date:</label>
+        <input class="form-control" type="date" id="startDate" name="startDate" required />
+        <br />
+        <label class="form-label" for="endDate">Select an End Date:</label>
+        <input class="form-control" type="date" id="endDate" name="endDate" required />
+        <br />
+        <input class="btn btn-primary" type="submit" onsubmit="HideAdd()" />
+        <input class="btn btn-primary" type="button" id="cancel" onClick="CancelAdd()" value="cancel" />
+    </form>
+</div>

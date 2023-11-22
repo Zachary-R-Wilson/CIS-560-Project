@@ -100,23 +100,23 @@
     </div>
 
     <div>
-        <button class="time-block-button" onClick="ShowAdd()">Schedule Time</button>
+        <button class="btn btn-primary" onClick="ShowAdd()">Schedule Time</button>
     </div>
 </div>
 
 <div id="popupForm" class="popup-form">
     <form class="popup-content" id="add-item" method="post">
         <input type="hidden" id="TimeBlockId" name="TimeBlockId" />
-        <label for="name">Name this Event:</label>
-        <input type="text" id="name" name="name" required />
+        <label class="form-label" for="name">Name this Event:</label>
+        <input class="form-control" type="text" id="name" name="name" required />
         <br />
-        <label for="description">Description of the Event:</label>
-        <input type="text" id="description" name="description" required />
+        <label class="form-label" for="description">Description of the Event:</label>
+        <input class="form-control" type="text" id="description" name="description" required />
         <br />
-        <label for="time">Select Event Time:</label>
-        <input type="time" step="900" id="time" name="time" required />
+        <label class="form-label" for="time">Select Event Time:</label>
+        <input class="form-control" type="time" step="900" id="time" name="time" required />
         <br />
-        <input type="submit" onsubmit="HideAdd()" />
-        <input type="button" id="cancel" onClick="CancelAdd()" value="cancel" />
+        <input class="btn btn-primary" type="submit" onsubmit="HideAdd()" />
+        <input class="btn btn-primary" type="button" id="cancel" onClick="CancelAdd()" value="cancel" />
     </form>
 </div>
