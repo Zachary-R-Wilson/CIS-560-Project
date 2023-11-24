@@ -5,11 +5,19 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeBlockPlanner", "TimeBlockPlanner\TimeBlockPlanner.csproj", "{10626211-4AC1-4108-AE22-A2BA3BF3A202}"
 EndProject
-<<<<<<< HEAD
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeBlockData", "TimeBlockData\TimeBlockData.csproj", "{597FBB2D-9C3A-4D25-A0EA-62782BE3EDBF}"
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserData", "UserData\UserData.csproj", "{745643D3-F74B-4F65-A9AF-B2C868B3072C}"
->>>>>>> reagan_2
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserData", "UserData\UserData.csproj", "{745643D3-F74B-4F65-A9AF-B2C868B3072C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B8C885B-F1CC-4844-B230-CF69F2419CA1}"
+	ProjectSection(SolutionItems) = preProject
+		RebuildDatabase.ps1 = RebuildDatabase.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{A5106CC9-91B7-4441-8483-5C34BFA57FE8}"
+	ProjectSection(SolutionItems) = preProject
+		CreateDatabase.ps1 = CreateDatabase.ps1
+		CreateDatabase.sql = CreateDatabase.sql
+		DropDatabase.ps1 = DropDatabase.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,20 +29,16 @@ Global
 		{10626211-4AC1-4108-AE22-A2BA3BF3A202}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10626211-4AC1-4108-AE22-A2BA3BF3A202}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10626211-4AC1-4108-AE22-A2BA3BF3A202}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
-		{597FBB2D-9C3A-4D25-A0EA-62782BE3EDBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{597FBB2D-9C3A-4D25-A0EA-62782BE3EDBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{597FBB2D-9C3A-4D25-A0EA-62782BE3EDBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{597FBB2D-9C3A-4D25-A0EA-62782BE3EDBF}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
 		{745643D3-F74B-4F65-A9AF-B2C868B3072C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{745643D3-F74B-4F65-A9AF-B2C868B3072C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{745643D3-F74B-4F65-A9AF-B2C868B3072C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{745643D3-F74B-4F65-A9AF-B2C868B3072C}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> reagan_2
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5106CC9-91B7-4441-8483-5C34BFA57FE8} = {9B8C885B-F1CC-4844-B230-CF69F2419CA1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E0AD6C7-CA1D-4C1D-84DB-D8E5AAE9BEB6}
