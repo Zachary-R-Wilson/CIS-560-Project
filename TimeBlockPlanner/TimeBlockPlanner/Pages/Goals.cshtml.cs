@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Caching.Memory;
-using TimeBlockData.Models;
+using UserData.Models;
 
 namespace TimeBlockPlanner.Pages
 {
