@@ -21,15 +21,16 @@
     function CancelAdd() {
         HideAdd();
         document.getElementById("name").value = '';
-        document.getElementById("description").value = '';
-        document.getElementById("time").value = '';
+        document.getElementById("date").value = '';
+        document.getElementById("value").value = '';
     }
 
     function EditRow(tr) {
-        document.getElementById("TimeBlockId").value = tr.children[0].innerText;
+        document.getElementById("TimeframeId").value = tr.children[0].innerText;
+        document.getElementById("MetricId").value = tr.children[1].innerText;
         document.getElementById("name").value = tr.children[2].innerText;
-        document.getElementById("description").value = tr.children[3].innerText;
-        document.getElementById("time").value = tr.children[1].innerText;
+        document.getElementById("date").value = tr.children[3].innerText;
+        document.getElementById("value").value = tr.children[4].innerText;
         document.getElementById("popupForm").style = 'display:block;';
     }
 </script>
@@ -47,16 +48,19 @@
         <table class="table">
             <tr>
                 <th style="display:none;">
-                    Id
+                    TimeframeId
                 </th>
-                <th style="width:10%;">
-                    Time
-                </th>
-                <th>
-                    Event
+                <th style="display:none;">
+                    MetricId
                 </th>
                 <th>
-                    Description
+                    Metric Name
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Value
                 </th>
             </tr>
             @* Example of the layout *@
@@ -64,32 +68,35 @@
                 <td style="display:none;">
                     1
                 </td>
-                <td>
-                    06:45
+                <td style="display:none;">
+                    1
                 </td>
                 <td>
-                    Meeting with Jeff
+                    Weekly Workouts
                 </td>
                 <td>
-                    Discussing business plans and such.
+                    @DateTime.Now
+                </td>
+                <td>
+                    2
                 </td>
             </tr>
 
             @* -- This will be used to create the table on the page -- *@
-            @* @foreach (TimeBlockData.Models.TimeBlock timeBlock in Model.TimeBlocks)
+@*             @foreach (TimeBlockData.Models.UserMetric userMetric in Model.UMetrics)
             {
                 <tr onclick="EditRow(this)">
                     <td style="display:none;">
-                        @timeBlock.TimeBlockID
+                        @userMetric.metricTimeFrame.MetricTimeFrameID
                     </td>
                     <td>
-                        @timeBlock.TimePeriod
+                        @userMetric.metric.MetricID
                     </td>
                     <td>
-                        @timeBlock.Name
+                        @userMetric.metric.Name
                     </td>
                     <td>
-                        @timeBlock.Description
+                        @userMetric.Date
                     </td>
                 </tr>
             } *@
@@ -99,21 +106,22 @@
     </div>
 
     <div>
-        <button class="btn btn-primary" onClick="ShowAdd()">Schedule Time</button>
+        <button class="btn btn-primary" onClick="ShowAdd()">Create Metric</button>
     </div>
 </div>
 
 <div id="popupForm" class="popup-form">
     <form class="popup-content" id="add-item" method="post">
-        <input type="hidden" id="TimeBlockId" name="TimeBlockId" />
-        <label class="form-label" for="name">Name this Event:</label>
+        <input type="hidden" id="TimeframeId" name="TimeframeId" />
+        <input type="hidden" id="MetricId" name="MetricId" />
+        <label class="form-label" for="name">Name this Metric:</label>
         <input class="form-control" type="text" id="name" name="name" required />
         <br />
-        <label class="form-label" for="description">Description of the Event:</label>
-        <input class="form-control" type="text" id="description" name="description" required />
+        <label class="form-label" for="time">Select Date:</label>
+        <input class="form-control" type="datetime" id="date" name="date" required />
         <br />
-        <label class="form-label" for="time">Select Event Time:</label>
-        <input class="form-control" type="time" step="900" id="time" name="time" required />
+        <label class="form-label" for="description">Value:</label>
+        <input class="form-control" type="text" id="value" name="value" required />
         <br />
         <input class="btn btn-primary" type="submit" onsubmit="HideAdd()" />
         <input class="btn btn-primary" type="button" id="cancel" onClick="CancelAdd()" value="cancel" />

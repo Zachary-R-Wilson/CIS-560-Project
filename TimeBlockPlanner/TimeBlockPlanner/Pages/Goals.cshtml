@@ -69,10 +69,10 @@
                     1
                 </td>
                 <td>
-                    Meeting with Jeff
+                    Build website
                 </td>
                 <td>
-                    Discussing business plans and such.
+                    Create the website.
                 </td>
                 <td>
                     @DateTime.Now
@@ -83,7 +83,7 @@
             </tr>
 
             @* -- This will be used to create the table on the page -- *@
-@*             @foreach (TimeBlockData.Models.Goals goal in Model.Goals)
+  @*           @foreach (TimeBlockData.Models.Goals goal in Model.Goals)
             {
                 <tr onclick="EditRow(this)">
                     <td style="display:none;">
@@ -109,7 +109,7 @@
     </div>
 
     <div>
-        <button class="btn btn-primary" onClick="ShowAdd()">Schedule Time</button>
+        <button class="btn btn-primary" onClick="ShowAdd()">Create Goal</button>
     </div>
 </div>
 
@@ -123,10 +123,10 @@
         <input class="form-control" type="text" id="description" name="description" required />
         <br />
         <label class="form-label" for="startDate">Select a Start Date:</label>
-        <input class="form-control" type="date" id="startDate" name="startDate" required />
+        <input class="form-control" type="datetime" id="startDate" name="startDate" required />
         <br />
         <label class="form-label" for="endDate">Select an End Date:</label>
-        <input class="form-control" type="date" id="endDate" name="endDate" required />
+        <input class="form-control" type="datetime" id="endDate" name="endDate" required />
         <br />
         <input class="btn btn-primary" type="submit" onsubmit="HideAdd()" />
         <input class="btn btn-primary" type="button" id="cancel" onClick="CancelAdd()" value="cancel" />

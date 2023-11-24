@@ -57,12 +57,12 @@ namespace TimeBlockPlanner.Pages
         /// <summary>
         /// Method to handle post requests on the page
         /// </summary>
-        public void OnPost(int? TimeBlockId, string name, string description, DateTime startDate, DateTime endDate)
+        public void OnPost(int? GoalsId, string name, string description, DateTime startDate, DateTime endDate)
         {
-            Console.WriteLine($"{TimeBlockId.ToString()}, {name}, {description}, {startDate.ToString()}, {endDate.ToString()}");
+            Console.WriteLine($"{GoalsId.ToString()}, {name}, {description}, {startDate.ToString()}, {endDate.ToString()}");
 
             // A return query will be required to display the back to the user and update the table
-            if (TimeBlockId != null)
+            if (GoalsId != null)
             {
                 //update the table
             }
