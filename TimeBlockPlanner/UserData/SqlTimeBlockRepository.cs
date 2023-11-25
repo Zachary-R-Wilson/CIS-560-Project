@@ -25,23 +25,12 @@ namespace UserData
         public void SaveTimeBlock(int timeBlockId, int userId, string name, string description, DateTime date, DateTimeOffset timePeriod)
         {
             // Verify parameters.
-            if (timeBlockId == null)
-                throw new ArgumentNullException(nameof(timeBlockId));
-
-            if (userId == null)
-                throw new ArgumentNullException(nameof(userId));
 
             if (name == null)
                 throw new ArgumentNullException(nameof(name));
 
             if (description == null)
                 throw new ArgumentNullException(nameof(description));
-
-            if (date == null)
-                throw new ArgumentNullException(nameof(date));
-
-            if (timePeriod == null)
-                throw new ArgumentNullException(nameof(timePeriod));
 
 
             // Save address to the database.

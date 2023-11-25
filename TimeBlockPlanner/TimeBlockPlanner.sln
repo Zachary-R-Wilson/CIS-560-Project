@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{A510
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{8EAB9EBE-5420-4774-8BE5-50553213AC99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessTests", "DataAccessTests\DataAccessTests.csproj", "{909835A9-873D-4524-AEF8-24655F1AC265}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8EAB9EBE-5420-4774-8BE5-50553213AC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EAB9EBE-5420-4774-8BE5-50553213AC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EAB9EBE-5420-4774-8BE5-50553213AC99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{909835A9-873D-4524-AEF8-24655F1AC265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909835A9-873D-4524-AEF8-24655F1AC265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909835A9-873D-4524-AEF8-24655F1AC265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909835A9-873D-4524-AEF8-24655F1AC265}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

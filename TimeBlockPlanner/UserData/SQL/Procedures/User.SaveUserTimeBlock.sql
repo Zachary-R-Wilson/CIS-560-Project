@@ -4,7 +4,7 @@
    @Name NVARCHAR(32),
    @Description NVARCHAR(32),
    @Date DATETIME,
-   @TimePeriod DATETIME
+   @TimePeriod DATETIMEOFFSET
 AS
 
 MERGE [User].TimeBlock T
@@ -15,9 +15,9 @@ USING
    ON S.UserId = T.UserId
 WHEN MATCHED AND NOT EXISTS
       (
-         SELECT S.Line1, S.Line2, S.City, S.StateCode, S.ZipCode
+         SELECT S.[Name], S.[Description], S.[Date], S.[TimePeriod]
          INTERSECT
-         SELECT  T.Line1, T.Line2, T.City, T.StateCode, T.ZipCode
+         SELECT  T.[Name], T.[Description], T.[Date], T.[TimePeriod]
       ) THEN
    UPDATE
    SET 
