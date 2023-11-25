@@ -9,7 +9,7 @@ using DataAccess;
 using UserData.Models;
 
 namespace UserData.DataDelegates
-{
+{ 
     internal class RetrieveTimeBlocksForUserDataDelegate : DataReaderDelegate<IReadOnlyList<TimeBlock>>
     {
         private readonly int userId;
