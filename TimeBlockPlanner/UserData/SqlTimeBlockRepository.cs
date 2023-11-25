@@ -22,7 +22,7 @@ namespace UserData
             this.connectionString = connectionString;
         }
 
-        public void SaveTimeBlock(int timeBlockId, int userId, string name, string description, DateTime date, DateTime timePeriod)
+        public void SaveTimeBlock(int timeBlockId, int userId, string name, string description, DateTime date, DateTimeOffset timePeriod)
         {
             // Verify parameters.
             if (timeBlockId == null)
@@ -111,7 +111,7 @@ namespace UserData
                    reader.GetString(nameOrdinal),
                    reader.GetString(descriptionOrdinal),
                    reader.GetDateTime(dateOrdinal),
-                   reader.GetString(timePeriodOrdinal)));
+                   reader.GetDateTimeOffset(timePeriodOrdinal)));
             }
 
             return addresses;

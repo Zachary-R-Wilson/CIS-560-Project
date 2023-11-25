@@ -12,8 +12,7 @@ namespace UserData
     {
         IReadOnlyList<TimeBlock> RetrieveTimeBlocks(int userId);
 
-        void SaveTimeBlock(int timeBlockId, int userId, string name, string description, DateTime date, DateTime timePeriod);
-
+        void SaveTimeBlock(int timeBlockId, int userId, string name, string description, DateTime date, DateTimeOffset timePeriod);
 
     }
 }
