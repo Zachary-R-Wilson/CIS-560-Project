@@ -1,12 +1,9 @@
-﻿using System;
+﻿using DataAccess;
+using UserData.Models;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess;
-using UserData.Models;
+using System.Data.SqlClient;
+
 
 namespace UserData.DataDelegates
 { 

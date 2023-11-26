@@ -2,12 +2,13 @@
 BEGIN
    CREATE TABLE [User].[User]
    (
-      UserId INT NOT NULL IDENTITY(1, 1),
+      UserId INT NOT NULL IDENTITY(1, 1) ,
+      Username  NVARCHAR(128) NOT NULL,
       Email NVARCHAR(128) NOT NULL,
       FirstName NVARCHAR(32) NOT NULL,
       LastName NVARCHAR(32) NOT NULL,
-      [Date] DATETIMEOFFSET NOT NULL,
-      Timeperiod DATETIMEOFFSET NOT NULL,
+      PasswordHash NVARCHAR(32) NOT NULL,
+      IsDeleted INT NOT NULL,
 
       CONSTRAINT [PK_User_User_UserId] PRIMARY KEY CLUSTERED
       (

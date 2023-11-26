@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="SQL\Data\**" />
-    <EmbeddedResource Remove="SQL\Data\**" />
-    <None Remove="SQL\Data\**" />
+    <Compile Remove="Sql\Data\**" />
+    <EmbeddedResource Remove="Sql\Data\**" />
+    <None Remove="Sql\Data\**" />
   </ItemGroup>
 
   <ItemGroup>
