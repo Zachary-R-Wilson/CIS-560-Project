@@ -1,5 +1,5 @@
 Param(
-   [string] $Server = "(localdb)\MSSQLLocalDb",
+   [string] $Server = "(localdb)\reaganlocal",
    [string] $Database = "rphazell"
 )
 

@@ -1,4 +1,4 @@
-﻿IF NOT EXISTS
+﻿    IF NOT EXISTS
    (
       SELECT *
       FROM sys.schemas s
