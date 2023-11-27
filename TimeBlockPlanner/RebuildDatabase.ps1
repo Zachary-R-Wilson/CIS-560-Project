@@ -2,7 +2,7 @@
 
 Param(
    [string] $Server = "(localdb)\reaganlocal",
-   [string] $Database = "master"
+   [string] $Database = "rphazell"
 )
 
 # This script requires the SQL Server module for PowerShell.
@@ -22,8 +22,8 @@ Write-Host "Rebuilding database $Database on $Server..."
 <#
    If on your local machine, you can drop and re-create the database.
 #>
-& ".\Scripts\DropDatabase.ps1" -Database $Database
-& ".\Scripts\CreateDatabase.ps1" -Database $Database
+& "C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\DropDatabase.ps1" -Database $Database
+& "C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\CreateDatabase.ps1" -Database $Database
 
 <#
    If on the department's server, you don't have permissions to drop or create databases.
