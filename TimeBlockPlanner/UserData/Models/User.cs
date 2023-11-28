@@ -20,9 +20,9 @@ namespace UserData.Models
 
         public string PasswordHash { get; }
 
-        public bool IsDeleted = false;
+        public int IsDeleted { get; }
 
-        public User(int userID, string un, string email, string fn, string ln, string passhash, bool isDeleted)
+        public User(int userID, string un, string email, string fn, string ln, string passhash, int isDeleted)
         {
             UserID = userID;
             Username = un;

@@ -3,16 +3,16 @@ using UserData.Models;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Net;
 
 namespace UserData.DataDelegates
-{ 
-    internal class RetrieveTimeBlocksForUserDataDelegate : DataReaderDelegate<IReadOnlyList<TimeBlock>>
+{
+    public class RetrieveGoalsForUserDataDelegate : DataReaderDelegate<IReadOnlyList<Goal>>
     {
         private readonly int userId;
 
-        public RetrieveTimeBlocksForUserDataDelegate(int userId)
-           : base("User.RetrieveTimeBlocksForUser")
+        public RetrieveGoalsForUserDataDelegate(int userId)
+           : base("User.RetrieveGoalsForUser")
         {
             this.userId = userId;
         }
@@ -24,21 +24,24 @@ namespace UserData.DataDelegates
             var p = command.Parameters.Add("UserId", SqlDbType.Int);
             p.Value = userId;
         }
-        public override IReadOnlyList<TimeBlock> Translate(Command command, IDataRowReader reader)
+        public override IReadOnlyList<Goal> Translate(Command command, IDataRowReader reader)
         {
-            var timeBlocks = new List<TimeBlock>();
+            var goals = new List<Goal>();
+
             while (reader.Read())
             {
-                timeBlocks.Add(new TimeBlock(
-                    reader.GetInt32("TimeBlockId"),
+                goals.Add(new Goal(
+                   reader.GetInt32("GoalId"),
                    reader.GetInt32("UserId"),
                    reader.GetString("Name"),
                    reader.GetString("Description"),
-                   reader.GetDateTime("Date", DateTimeKind.Local),
-                   reader.GetDateTimeOffset("TimePeriod")));
+                   reader.GetDateTime("StartDate", DateTimeKind.Local),
+                   reader.GetDateTime("EndDate", DateTimeKind.Local),
+                   reader.GetInt32("IsComplete"),
+                   reader.GetString("Progress")));
             }
 
-            return timeBlocks;
+            return goals;
         }
     }
 }

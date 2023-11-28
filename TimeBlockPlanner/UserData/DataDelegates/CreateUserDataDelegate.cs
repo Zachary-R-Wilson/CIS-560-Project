@@ -13,10 +13,10 @@ namespace UserData.DataDelegates
         public readonly string firstName;
         public readonly string lastName;
         public readonly string passwordHash;
-        public readonly bool isDeleted;
+        public readonly int isDeleted;
 
 
-        public CreateUserDataDelegate(string userName, string email, string firstName, string lastName, string passwordHash, bool isDeleted)
+        public CreateUserDataDelegate(string userName, string email, string firstName, string lastName, string passwordHash, int isDeleted)
            : base("Person.CreatePerson")
         {
             this.userName = userName;
