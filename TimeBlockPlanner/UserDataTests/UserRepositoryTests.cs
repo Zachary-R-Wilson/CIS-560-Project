@@ -60,7 +60,7 @@ namespace UserDataTests
         public void GetUserByIdShouldWork()
         {
             var expected = CreateTestUser();
-            var actual = repo.GetUserById(expected.UserID);
+            var actual = repo.GetUserById(expected.UserId);
 
             AssertUsersAreEqual(expected, actual);
         }
@@ -83,9 +83,9 @@ namespace UserDataTests
 
             var expected = new Dictionary<int, User>
          {
-            { p1.UserID, p1 },
-            { p2.UserID, p2 },
-            { p3.UserID, p3 }
+            { p1.UserId, p1 },
+            { p2.UserId, p2 },
+            { p3.UserId, p3 }
          };
 
             var actual = repo.RetrieveUsers();
@@ -97,10 +97,10 @@ namespace UserDataTests
 
             foreach (var a in actual)
             {
-                if (!expected.ContainsKey(a.UserID))
+                if (!expected.ContainsKey(a.UserId))
                     continue;
 
-                AssertUsersAreEqual(expected[a.UserID], a);
+                AssertUsersAreEqual(expected[a.UserId], a);
 
                 matchCount += 1;
             }

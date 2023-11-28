@@ -8,6 +8,7 @@ namespace UserData
     {
         IReadOnlyList<Goal> RetrieveGoals(int userId);
 
-        void SaveGoal(int goalId, int userId, string name, string description, DateTime startDate, DateTime endDate, int isComplete, string progress);
+        void SaveGoal(int goalId, int userId, string name, string description, DateTime startDate, DateTime endDate, int IsComplete, string progress);
     }
 }
+

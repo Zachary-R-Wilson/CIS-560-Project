@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace UserData.Models
 {
-    public class MetricTimeFrame 
+    public class MetricTimeframe 
     {
-        public int MetricTimeFrameID { get; }
+        public int MetricTimeframeId { get; }
         public string Name { get; }
-        public bool IsDeleted = false;
+        public int IsDeleted { get; }
 
-        public MetricTimeFrame(int metric, string name, bool isDeleted)
+        public MetricTimeframe(int metric, string name, int isDeleted)
         {
-            MetricTimeFrameID = metric;
+            MetricTimeframeId = metric;
             Name = name;
             IsDeleted = isDeleted;
         }

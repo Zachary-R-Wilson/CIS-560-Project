@@ -53,6 +53,9 @@ namespace TimeBlockPlanner.Pages
             // This is where a call to the server will be made to get the information to display the data to the frontend user
             // new list<int> will be replaced with a call to the server for data.
             this.TimeBlocks = new List<TimeBlock>();
+
+
+           // 
         }
 
         /// <summary>

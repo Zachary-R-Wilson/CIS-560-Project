@@ -8,8 +8,8 @@ namespace UserData.Models
 {
     public class Goal
     {
-        public int GoalsID { get; }
-        public int UserID { get; }
+        public int GoalId { get; }
+        public int UserId { get; }
         public string Name { get; }
         public string Description { get; }
         public DateTime StartDate { get; }
@@ -19,8 +19,8 @@ namespace UserData.Models
 
         public Goal(int goalsID, int userID, string name, string description, DateTime start, DateTime end, int isComplete, string progress)
         {
-            GoalsID = goalsID;
-            UserID = userID;
+            GoalId = goalsID;
+            UserId = userID;
             Name = name;
             Description = description;
             StartDate = start;

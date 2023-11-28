@@ -17,7 +17,7 @@ namespace UserData.DataDelegates
 
 
         public CreateUserDataDelegate(string userName, string email, string firstName, string lastName, string passwordHash, int isDeleted)
-           : base("Person.CreatePerson")
+           : base("Person.CreateUser")
         {
             this.userName = userName;
             this.email = email;
@@ -46,7 +46,7 @@ namespace UserData.DataDelegates
 
         public override User Translate(Command command)
         {
-            return new User(command.GetParameterValue<int>("PersonId"), userName, email, firstName, lastName, passwordHash, isDeleted);
+            return new User(command.GetParameterValue<int>("UserId"), userName, email, firstName, lastName, passwordHash, isDeleted);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Reflection.PortableExecutable;
 
 namespace PersonData.DataDelegates
 {
-    internal class SavePersonAddressDataDelegate : DataDelegate
+    internal class SaveUserTimeBlockDataDelegate : DataDelegate
     {
         private readonly int timeBlockId;
         private readonly int userId;
@@ -13,7 +13,7 @@ namespace PersonData.DataDelegates
         private readonly DateTime date;
         private readonly DateTimeOffset timePeriod;
  
-        public SavePersonAddressDataDelegate(int timeBlockId, int userId, string name, string description, DateTime date,  DateTimeOffset timePeriod)
+        public SaveUserTimeBlockDataDelegate(int timeBlockId, int userId, string name, string description, DateTime date,  DateTimeOffset timePeriod)
            : base("User.SaveUserTimeBlock")
         {
             this.timeBlockId = timeBlockId;
