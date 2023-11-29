@@ -44,7 +44,7 @@ namespace TimeBlockPlanner.Pages
         public void OnPost()
         {
             User user = repo.GetUserByUsername(SignInUser.username);
-            if(user.Username != null) 
+            if(user != null) 
             {
                 //Check if user is in DB
                 using (var md5Hash = MD5.Create())
