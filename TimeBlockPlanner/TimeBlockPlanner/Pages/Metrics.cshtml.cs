@@ -9,10 +9,10 @@ namespace TimeBlockPlanner.Pages
     public class MetricsModel : PageModel
     {
         [BindProperty]
-        public MetricTimeframeForm MetricTimeframe { get; set; }
+        public UserMetricForm UserMetric { get; set; }
 
         [BindProperty]
-        public UserMetricForm UserMetric { get; set; }
+        public MetricTimeframeForm MetricTimeframe { get; set; }
 
         private const string connectionString = @"Server=(localdb)\reaganlocal;Database=rphazell;Integrated Security=SSPI;";
         private IUserMetricRepository UserMetricRepo = new SqlUserMetricRepository(connectionString);
@@ -69,10 +69,11 @@ namespace TimeBlockPlanner.Pages
         /// <summary>
         /// Method to handle post requests on the page
         /// </summary>
-        public void OnPostMetric()
+        public void OnPostMetric(int metricTimeframeId, int metricId, string metricName, string metricTimeframeName, DateTime date, int value)
         {
-            Console.WriteLine(UserMetric.metricName);
-            //Console.WriteLine($"{TimeframeId.ToString()}, {MetricId.ToString()}, {name}, {Date.ToString()}, {value}");
+            Console.WriteLine($"{metricTimeframeId}, {metricId}, {metricName}, {metricTimeframeName}, {date}, {value}");
+
+            UserMetricRepo.SaveUserMetric(UserId, metricTimeframeId, metricId, date, value);
         }
 
         public void OnPostMetricTimeframe()

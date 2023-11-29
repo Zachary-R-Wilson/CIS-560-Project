@@ -20,8 +20,8 @@
 
     function CancelAdd() {
         HideAdd();
-        document.getElementById("name").value = '';
-        document.getElementById("metricType").value = '';
+        document.getElementById("metricName").value = '';
+        document.getElementById("metricTimeframeName").value = '';
         document.getElementById("date").value = '';
         document.getElementById("value").value = '';
     }
@@ -29,8 +29,8 @@
     function EditRow(tr) {
         document.getElementById("MetricTimeframeId").value = tr.children[0].innerText;
         document.getElementById("MetricId").value = tr.children[1].innerText;
-        document.getElementById("name").value = tr.children[2].innerText;
-        document.getElementById("metricType").value = tr.children[3].innerText;
+        document.getElementById("metricName").value = tr.children[2].innerText;
+        document.getElementById("metricTimeframeName").value = tr.children[3].innerText;
         document.getElementById("date").value = tr.children[4].innerText;
         document.getElementById("value").value = tr.children[5].innerText;
         document.getElementById("popupForm").style = 'display:block;';
@@ -49,12 +49,12 @@
         HideAdd();
         CancelAdd();
         document.getElementById("MetricTimeframeId2").value = '';
-        document.getElementById("metricName").value = '';
+        document.getElementById("name").value = '';
     }
 
     function EditType(td) {
         document.getElementById("MetricTimeframeId2").value = td.children[0].innerText;
-        document.getElementById("metricName").value = td.children[3].innerText;
+        document.getElementById("name").value = td.children[3].innerText;
         document.getElementById("popupMetricType").style = 'display:block;';
         CancelAdd();
     }
@@ -147,11 +147,11 @@
     <form class="popup-content" id="add-item" method="post" asp-page-handler="Metric">
         <input type="hidden" asp-for="UserMetric.metricTimeframeId" id="MetricTimeframeId" name="MetricTimeframeId" />
         <input type="hidden" asp-for="UserMetric.metricId" id="MetricId" name="MetricId" />
-        <label class="form-label" for="name">Name this Metric:</label>
-        <input class="form-control" type="text" asp-for="UserMetric.metricName" id="name" name="name" required />
+        <label class="form-label" for="metricName">Name this Metric:</label>
+        <input class="form-control" type="text" asp-for="UserMetric.metricName" id="metricName" name="metricName" required />
         <br />
-        <label class="form-label" for="metricType">Name this Metric:</label>
-        <select class="form-control" asp-for="UserMetric.metricTimeframeName" id="metricType" name="metricType" required>
+        <label class="form-label" for="metricTimeframeName">Name this Metric:</label>
+        <select class="form-control" asp-for="UserMetric.metricTimeframeName" id="metricTimeframeName" name="metricTimeframeName" required>
             @foreach (UserData.Models.MetricTimeframe metricTimeframe in Model.MetricTimeframes)
             {
                 <option value="@metricTimeframe.Name">@metricTimeframe.Name</option>
@@ -164,7 +164,7 @@
         <label class="form-label" for="value">Value:</label>
         <input class="form-control" type="number" asp-for="UserMetric.value" id="value" name="value" required />
         <br />
-        <input class="btn btn-primary" type="submit" onClick="HideAdd()" />
+        <input class="btn btn-primary" type="submit" onClick="HideAdd()"/>
         <input class="btn btn-primary" type="button" id="cancel" onClick="CancelAdd()" value="cancel" />
     </form>
 </div>
@@ -173,7 +173,7 @@
     <form class="popup-content" id="add-type" method="post" asp-page-handler="MetricTimeframe">
         <input type="hidden" asp-for="MetricTimeframe.metricTimeframeId" id="MetricTimeframeId2" name="MetricTimeframeId2" />
         <label class="form-label" for="name">Name this Metric Type:</label>
-        <input class="form-control" type="text" asp-for="MetricTimeframe.name" id="metricName" required />
+        <input class="form-control" type="text" asp-for="MetricTimeframe.name" id="name" required />
         <br />
         <label class="form-label" for="isDeleted">Completed Goal:</label>
         <input type="checkbox" id="isDeleted" asp-for="MetricTimeframe.IsDeleted" name="isDeleted" value="true" />

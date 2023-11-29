@@ -9,9 +9,13 @@ namespace TimeBlockPlanner.Pages
 
         public int metricId { get; set; }
 
-        public string metricName { get; set; }
+        private string _metricName = "";
 
-        public string metricTimeframeName { get; set; }
+        public string metricName => _metricName;
+
+        private string _metricTimeframeName = "";
+
+        public string metricTimeframeName => _metricTimeframeName;
 
         public DateTime date { get; set; }
 
