@@ -10,12 +10,15 @@ namespace UserData
     public class IMetricTimeframeRepository
     {
 
+        /* REAGAN FIX
         IReadOnlyList<MetricTimeframe> RetrieveMetricTimeframes();
 
        
         MetricTimeframe RetrieveMetricTimeframe(int metricTimeframeId);
 
         MetricTimeframe CreateMetricTimeframe(string name, int isDeleted);
+
+        */
     }
 }
 

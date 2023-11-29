@@ -23,9 +23,13 @@ namespace UserData.DataDelegates
             var p = command.Parameters.Add("UserId", SqlDbType.Int);
             p.Value = userId;
         }
+
+    
         public override IReadOnlyList<UserMetric> Translate(Command command, IDataRowReader reader)
         {
             var userMetrics = new List<UserMetric>();
+
+            /* REAGAN FIX
             while (reader.Read())
             {
                 userMetrics.Add(new UserMetric(
@@ -35,9 +39,10 @@ namespace UserData.DataDelegates
                    reader.GetDateTime("Date", DateTimeKind.Local),
                    reader.GetInt32("Value")));
             }
-
+            */
             return userMetrics;
         }
+        
     }
 }
 

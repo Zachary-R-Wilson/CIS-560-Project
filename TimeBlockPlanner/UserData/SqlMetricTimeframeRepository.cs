@@ -33,13 +33,14 @@ namespace UserData
             return executor.ExecuteNonQuery(d);
         }
 
+        /* REAGAN FIX
         public MetricTimeframe RetrieveMetricTimeframe(int metricTimeframeId)
         {
-            var d = new RetrieveMetricTimeframeDataDelegate(metricTimeframeId);
+            var d = new RetrieveMetricTimeframesDataDelegate();
             return executor.ExecuteReader(d);
         }
 
-
+        */
         public IReadOnlyList<MetricTimeframe> RetrieveMetricTimeframes()   
         {
             return executor.ExecuteReader(new RetrieveMetricTimeframesDataDelegate());
