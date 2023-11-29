@@ -22,8 +22,8 @@ Write-Host "Rebuilding database $Database on $Server..."
 <#
    If on your local machine, you can drop and re-create the database.
 #>
-& "C:\Users\rphaz\source\repos\CIS-560-Project\TimeBlockPlanner\DropDatabase.ps1" -Database $Database
-& "C:\Users\rphaz\source\repos\CIS-560-Project\TimeBlockPlanner\CreateDatabase.ps1" -Database $Database
+& "C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\DropDatabase.ps1" -Database $Database
+& "C:\Users\Steel\source\repos\CIS-560-Project\TimeBlockPlanner\CreateDatabase.ps1" -Database $Database
 
 <#
    If on the department's server, you don't have permissions to drop or create databases.
@@ -42,6 +42,7 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\S
 Write-Host "Stored procedures..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.CreateUser.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.GetUserByEmail.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.GetUserByUsername.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.GetUserById.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.SaveUserTimeBlock.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveTimeBlocksForUser.sql"
