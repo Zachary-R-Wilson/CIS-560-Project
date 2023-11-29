@@ -13,7 +13,7 @@ USING
       (
          VALUES(@UserId, @Name, @Description, @Date, @TimePeriod, @TimeBlockId)
       ) S(UserId, [Name], [Description], [Date], TimePeriod, TimeBlockId)
-   ON S.UserId = T.UserId
+   ON S.UserId = T.UserId AND S.[Name] = T.[Name] AND S.[Description] = T.[Description]
 WHEN MATCHED AND NOT EXISTS
       (
          SELECT S.[Name], S.[Description], S.[Date], S.[TimePeriod]

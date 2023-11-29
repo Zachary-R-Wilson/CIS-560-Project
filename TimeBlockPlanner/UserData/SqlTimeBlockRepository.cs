@@ -22,7 +22,7 @@ namespace UserData
             this.connectionString = connectionString;
         }
 
-        public void SaveTimeBlock(int timeBlockId, int userId, string name, string description, DateTime date, DateTimeOffset timePeriod)
+        public void SaveTimeBlock(int timeBlockId, int userId, string name, string description, DateTime date, DateTime timePeriod)
         {
             // Verify parameters.
 
@@ -38,7 +38,7 @@ namespace UserData
             {
                 using (var connection = new SqlConnection(connectionString))
                 {
-                    using (var command = new SqlCommand("User.SaveTimeBlock", connection))
+                    using (var command = new SqlCommand("User.SaveUserTimeBlock", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -47,7 +47,7 @@ namespace UserData
                         command.Parameters.AddWithValue("Name", name);
                         command.Parameters.AddWithValue("Description", description);
                         command.Parameters.AddWithValue("Date", date);
-                        command.Parameters.AddWithValue("Time", timePeriod);
+                        command.Parameters.AddWithValue("TimePeriod", timePeriod);
 
 
                         connection.Open();
@@ -100,7 +100,7 @@ namespace UserData
                    reader.GetString(nameOrdinal),
                    reader.GetString(descriptionOrdinal),
                    reader.GetDateTime(dateOrdinal),
-                   reader.GetDateTimeOffset(timePeriodOrdinal)));
+                   reader.GetDateTime(timePeriodOrdinal)));
             }
 
             return addresses;

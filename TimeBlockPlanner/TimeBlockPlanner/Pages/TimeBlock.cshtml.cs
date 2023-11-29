@@ -58,28 +58,15 @@ namespace TimeBlockPlanner.Pages
                 Response.Redirect("SignIn");
             }
             _cache.Get("");
+            
         }
 
         /// <summary>
         /// Method to handle post requests on the page
         /// </summary>
-        public void OnPost(int? TimeBlockId, TimeSpan time, string name, string description) 
+        public void OnPost(int TimeBlockId, TimeSpan time, string name, string description) 
         {
-            // When a post is made, we are either updating a current row
-            // or we are inserting a new row into the database.
-            // A row is to be updated if there is a TimeBlockId, otherwise it should be inserted
-
-            Console.WriteLine($"{TimeBlockId.ToString()}, {time.ToString()}, {name}, {description}");
-
-            // A return query will be required to display the back to the user and update the table
-            if(TimeBlockId != null)
-            {
-                //update the table
-            }
-            else
-            {
-                //insert new row into the table
-            }
+            repo.SaveTimeBlock(2, UserId, name, description, DateTime.Now, (new DateTime(2012, 01, 01) + time));
         }
     }
 }

@@ -60,21 +60,6 @@
                     Description
                 </th>
             </tr>
-            @* Example of the layout *@
-            <tr onclick="EditRow(this)">
-                <td style="display:none;">
-                    1
-                </td>
-                <td>
-                    06:45
-                </td>
-                <td>
-                    Meeting with Jeff
-                </td>
-                <td>
-                    Discussing business plans and such.
-                </td>
-            </tr>
             
             @* -- This will be used to create the table on the page -- *@
             @foreach (UserData.Models.TimeBlock timeBlock in Model.TimeBlocks)
@@ -84,7 +69,7 @@
                         @timeBlock.TimeBlockId
                     </td>
                     <td>
-                        @timeBlock.TimePeriod
+                        @timeBlock.TimePeriod.ToString("HH:mm")
                     </td>
                     <td>
                         @timeBlock.Name

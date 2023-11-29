@@ -35,7 +35,7 @@ namespace UserData.DataDelegates
                    reader.GetString("Name"),
                    reader.GetString("Description"),
                    reader.GetDateTime("Date", DateTimeKind.Local),
-                   reader.GetDateTimeOffset("TimePeriod")));
+                   reader.GetDateTime("TimePeriod", DateTimeKind.Local)));
             }
 
             return timeBlocks;

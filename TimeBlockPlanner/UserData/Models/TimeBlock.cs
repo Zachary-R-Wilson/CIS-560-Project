@@ -13,9 +13,9 @@ namespace UserData.Models
         public string Name { get; }
         public string Description { get; }
         public DateTime Date { get; }
-        public DateTimeOffset TimePeriod { get; }
+        public DateTime TimePeriod { get; }
 
-        public TimeBlock(int timeBlockId, int userID, string name, string description, DateTime date, DateTimeOffset timeP)
+        public TimeBlock(int timeBlockId, int userID, string name, string description, DateTime date, DateTime timeP)
         {
             TimeBlockId = timeBlockId;
             UserId = userID;
