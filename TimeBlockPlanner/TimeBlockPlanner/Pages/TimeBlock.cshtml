@@ -77,12 +77,11 @@
             </tr>
             
             @* -- This will be used to create the table on the page -- *@
-            @*
             @foreach (UserData.Models.TimeBlock timeBlock in Model.TimeBlocks)
             {
                 <tr onclick="EditRow(this)">
                     <td style="display:none;">
-                        @timeBlock.TimeBlockID
+                        @timeBlock.TimeBlockId
                     </td>
                     <td>
                         @timeBlock.TimePeriod
@@ -94,7 +93,7 @@
                         @timeBlock.Description
                     </td>
                 </tr>
-            } *@
+            }
            
 
         </table>

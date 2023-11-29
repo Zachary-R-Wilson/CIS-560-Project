@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Caching.Memory;
+using UserData;
 using UserData.Models;
 
 
@@ -8,17 +9,25 @@ namespace TimeBlockPlanner.Pages
 {
     public class TimeBlockModel : PageModel
     {
+        private const string connectionString = @"Server=(localdb)\reaganlocal;Database=rphazell;Integrated Security=SSPI;";
+        private ITimeBlockRepository repo = new SqlTimeBlockRepository(connectionString);
+
         /// <summary>
         /// The timeblocks being displayed from the server to the user
         /// </summary>
-        public IEnumerable<TimeBlock> TimeBlocks { get; set; }
+        public IEnumerable<TimeBlock> TimeBlocks { 
+            get
+            {
+                return repo.RetrieveTimeBlocks(UserId);
+            } 
+        }
 
         /// <summary>
         /// Cache Storage to retrieve the userId
         /// </summary>
         private readonly IMemoryCache _cache;
 
-        public int userId 
+        public int UserId 
         { 
             get
             {
@@ -49,13 +58,6 @@ namespace TimeBlockPlanner.Pages
                 Response.Redirect("SignIn");
             }
             _cache.Get("");
-
-            // This is where a call to the server will be made to get the information to display the data to the frontend user
-            // new list<int> will be replaced with a call to the server for data.
-            this.TimeBlocks = new List<TimeBlock>();
-
-
-           // 
         }
 
         /// <summary>

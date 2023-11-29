@@ -13,7 +13,7 @@ namespace UserData.Models
         public string Name { get; }
         public string Description { get; }
         public DateTime Date { get; }
-        private DateTimeOffset TimePeriod { get; }
+        public DateTimeOffset TimePeriod { get; }
 
         public TimeBlock(int timeBlockId, int userID, string name, string description, DateTime date, DateTimeOffset timeP)
         {
