@@ -1,23 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Caching.Memory;
+using UserData;
 using UserData.Models;
 
 namespace TimeBlockPlanner.Pages
 {
     public class GoalsModel : PageModel
     {
+        private const string connectionString = @"Server=(localdb)\reaganlocal;Database=rphazell;Integrated Security=SSPI;";
+        private IGoalRepository repo = new SqlGoalRepository(connectionString);
+
         /// <summary>
         /// The timeblocks being displayed from the server to the user
         /// </summary>
-        public IEnumerable<Goal> Goals { get; set; }
+        public IEnumerable<Goal> Goals { get { return repo.RetrieveGoals(UserId); } }
 
         /// <summary>
         /// Cache Storage to retrieve the userId
         /// </summary>
         private readonly IMemoryCache _cache;
 
-        public int userId
+        public int UserId
         {
             get
             {
@@ -48,28 +52,16 @@ namespace TimeBlockPlanner.Pages
                 Response.Redirect("SignIn");
             }
             _cache.Get("");
-
-            // This is where a call to the server will be made to get the information to display the data to the frontend user
-            // new list<int> will be replaced with a call to the server for data.
-            this.Goals = new List<Goal>();
         }
 
         /// <summary>
         /// Method to handle post requests on the page
         /// </summary>
-        public void OnPost(int? GoalsId, string name, string description, DateTime startDate, DateTime endDate)
+        public void OnPost(int GoalsId, string name, string description, DateTime startDate, DateTime endDate)
         {
             Console.WriteLine($"{GoalsId.ToString()}, {name}, {description}, {startDate.ToString()}, {endDate.ToString()}");
 
-            // A return query will be required to display the back to the user and update the table
-            if (GoalsId != null)
-            {
-                //update the table
-            }
-            else
-            {
-                //insert new row into the table
-            }
+            repo.SaveGoal(GoalsId, UserId, name, description, startDate, endDate, 1, "");
         }
     }
 }

@@ -15,13 +15,14 @@ namespace UserData.DataDelegates
         private readonly string progress;
 
         public SaveUserGoalDataDelegate(int goalId, int userId, string name, string description, DateTime startDate, DateTime endDate, int isComplete, string progress)
-           : base("Person.SavePersonAddress")
+           : base("User.SaveGoalForUser")
         {
             this.goalId = goalId;
             this.userId = userId;
             this.name = name;
             this.description = description;
-            this.startDate = endDate;
+            this.startDate = startDate;
+            this.endDate = endDate;
             this.isComplete = isComplete;
             this.progress = progress;
         }
@@ -34,7 +35,7 @@ namespace UserData.DataDelegates
             command.Parameters.AddWithValue("UserId", userId);
             command.Parameters.AddWithValue("Name", name);
             command.Parameters.AddWithValue("Description", description);
-            command.Parameters.AddWithValue("StatDate", startDate);
+            command.Parameters.AddWithValue("StartDate", startDate);
             command.Parameters.AddWithValue("EndDate", endDate);
             command.Parameters.AddWithValue("IsComplete", isComplete);
             command.Parameters.AddWithValue("Progress", progress);

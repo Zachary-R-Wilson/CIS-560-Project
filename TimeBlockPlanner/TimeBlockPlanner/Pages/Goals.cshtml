@@ -63,31 +63,13 @@
                     End Date
                 </th>
             </tr>
-            @* Example of the layout *@
-            <tr onclick="EditRow(this)">
-                <td style="display:none;">
-                    1
-                </td>
-                <td>
-                    Build website
-                </td>
-                <td>
-                    Create the website.
-                </td>
-                <td>
-                    @DateTime.Now
-                </td>
-                <td>
-                    @DateTime.Now
-                </td>
-            </tr>
 
             @* -- This will be used to create the table on the page -- *@
-  @*           @foreach (TimeBlockData.Models.Goals goal in Model.Goals)
+            @foreach (UserData.Models.Goal goal in Model.Goals)
             {
                 <tr onclick="EditRow(this)">
                     <td style="display:none;">
-                        @goal.GoalsID
+                        @goal.GoalId
                     </td>
                     <td>
                         @goal.Name
@@ -96,13 +78,13 @@
                         @goal.Description
                     </td>
                     <td>
-                        @goal.StartDate
+                        @goal.StartDate.ToString("yyyy-MM-dd")
                     </td>
                     <td>
-                        @goal.EndDate
+                        @goal.EndDate.ToString("yyyy-MM-dd")
                     </td>
                 </tr>
-            } *@
+            }
 
 
         </table>
@@ -123,10 +105,10 @@
         <input class="form-control" type="text" id="description" name="description" required />
         <br />
         <label class="form-label" for="startDate">Select a Start Date:</label>
-        <input class="form-control" type="datetime" id="startDate" name="startDate" required />
+        <input class="form-control" type="date" id="startDate" name="startDate" required />
         <br />
         <label class="form-label" for="endDate">Select an End Date:</label>
-        <input class="form-control" type="datetime" id="endDate" name="endDate" required />
+        <input class="form-control" type="date" id="endDate" name="endDate" required />
         <br />
         <input class="btn btn-primary" type="submit" onsubmit="HideAdd()" />
         <input class="btn btn-primary" type="button" id="cancel" onClick="CancelAdd()" value="cancel" />

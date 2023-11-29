@@ -66,7 +66,7 @@ namespace TimeBlockPlanner.Pages
         /// </summary>
         public void OnPost(int TimeBlockId, TimeSpan time, string name, string description) 
         {
-            repo.SaveTimeBlock(2, UserId, name, description, DateTime.Now, (new DateTime(2012, 01, 01) + time));
+            repo.SaveTimeBlock(TimeBlockId, UserId, name, description, DateTime.Now, (new DateTime(2012, 01, 01) + time));
         }
     }
 }

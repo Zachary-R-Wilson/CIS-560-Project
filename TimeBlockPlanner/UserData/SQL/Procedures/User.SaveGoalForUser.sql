@@ -14,7 +14,7 @@ USING
       (
          VALUES(@GoalId, @UserId, @Name, @Description, @StartDate, @EndDate, @IsComplete, @Progress)
       ) S(GoalId, UserId, [Name], [Description], StartDate, EndDate, IsComplete, Progress)
-   ON S.UserId = G.UserId
+   ON S.UserId = G.UserId AND S.[Name] = G.[Name] AND S.[Description] = G.[Description]
 WHEN MATCHED AND NOT EXISTS
       (
          SELECT S.[Name], S.[Description], S.StartDate, S.EndDate, S.IsComplete, S.Progress
@@ -30,6 +30,6 @@ WHEN MATCHED AND NOT EXISTS
       IsComplete = S.IsComplete,
       Progress = S.Progress
 WHEN NOT MATCHED THEN
-   INSERT(GoalId, UserId, [Name], [Description], StartDate, EndDate, IsComplete, Progress)
-   VALUES(S.GoalId, S.UserId, S.[Name], S.[Description], S.StartDate, S.EndDate, S.IsComplete, S.Progress);
+   INSERT(UserId, [Name], [Description], StartDate, EndDate, IsComplete, Progress)
+   VALUES(S.UserId, S.[Name], S.[Description], S.StartDate, S.EndDate, S.IsComplete, S.Progress);
 GO

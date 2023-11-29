@@ -38,6 +38,11 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\S
 Write-Host "Creating tables..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Tables\User.User.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Tables\User.TimeBlock.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Tables\User.Goal.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Tables\User.Metric.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Tables\User.MetricTimeframe.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Tables\User.UserMetric.sql"
+
 
 Write-Host "Stored procedures..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.CreateUser.sql"
@@ -47,6 +52,10 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\S
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.SaveUserTimeBlock.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveTimeBlocksForUser.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveUsers.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.SaveGoalForUser.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveGoalsForUser.sql"
+
+
 
 
 
