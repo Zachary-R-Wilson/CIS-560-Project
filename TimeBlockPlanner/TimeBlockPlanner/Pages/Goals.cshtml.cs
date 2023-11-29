@@ -57,11 +57,18 @@ namespace TimeBlockPlanner.Pages
         /// <summary>
         /// Method to handle post requests on the page
         /// </summary>
-        public void OnPost(int GoalsId, string name, string description, DateTime startDate, DateTime endDate)
+        public void OnPost(int GoalsId, string name, string description, DateTime startDate, DateTime endDate, bool isCompleted)
         {
-            Console.WriteLine($"{GoalsId.ToString()}, {name}, {description}, {startDate.ToString()}, {endDate.ToString()}");
+            Console.WriteLine($"{GoalsId.ToString()}, {name}, {description}, {startDate.ToString()}, {endDate.ToString()}, {isCompleted}");
 
-            repo.SaveGoal(GoalsId, UserId, name, description, startDate, endDate, 1, "");
+            if(isCompleted)
+            {
+                repo.SaveGoal(GoalsId, UserId, name, description, startDate, endDate, 0, "");
+            }
+            else
+            {
+                repo.SaveGoal(GoalsId, UserId, name, description, startDate, endDate, 1, "");
+            }
         }
     }
 }
