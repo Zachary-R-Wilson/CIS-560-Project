@@ -1,13 +1,15 @@
-﻿IF OBJECT_ID(N'User.User') IS NULL
+﻿
+IF OBJECT_ID(N'User.User') IS NULL
 BEGIN
    CREATE TABLE [User].[User]
    (
-      UserId INT NOT NULL IDENTITY(1, 1),
+      UserId INT NOT NULL IDENTITY(1, 1) ,
+      Username  NVARCHAR(128) NOT NULL,
       Email NVARCHAR(128) NOT NULL,
       FirstName NVARCHAR(32) NOT NULL,
       LastName NVARCHAR(32) NOT NULL,
-      [Date] DATETIMEOFFSET NOT NULL,
-      Timeperiod DATETIMEOFFSET NOT NULL,
+      PasswordHash NVARCHAR(32) NOT NULL,
+      IsDeleted INT NOT NULL,
 
       CONSTRAINT [PK_User_User_UserId] PRIMARY KEY CLUSTERED
       (
@@ -53,3 +55,12 @@ BEGIN
       FirstName > N'' OR LastName > N''
    )
 END;
+
+
+
+
+SELECT * 
+FROM sys.foreign_keys
+WHERE referenced_object_id = object_id('User.User') 
+
+

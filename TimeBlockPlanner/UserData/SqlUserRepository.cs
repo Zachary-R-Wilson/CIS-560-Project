@@ -21,7 +21,7 @@ namespace UserData
             this.connectionString = connectionString;
         }
 
-        public User CreateUser(string firstName, string lastName, string email, string username, string passwordHash, bool isDeleted)
+        public User CreateUser(string firstName, string lastName, string email, string username, string passwordHash, int isDeleted)
         {
             // Verify parameters.
             if (string.IsNullOrWhiteSpace(firstName))
@@ -38,6 +38,9 @@ namespace UserData
 
             if (string.IsNullOrWhiteSpace(passwordHash))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(passwordHash));
+
+            if (string.IsNullOrWhiteSpace(isDeleted.ToString()))
+                throw new ArgumentException("The parameter cannot be null or empty.", nameof(isDeleted));
 
 
             // Save to database.
@@ -171,7 +174,7 @@ namespace UserData
                reader.GetString(emailOrdinal),
                reader.GetString(usernameOrdinal),
                reader.GetString(passwordHashOrdinal),
-               reader.GetBoolean(isDeletedOrdinal));
+               reader.GetInt32(isDeletedOrdinal));
        
         }
 
@@ -196,7 +199,7 @@ namespace UserData
                    reader.GetString(emailOrdinal),
                    reader.GetString(usernameOrdinal),
                    reader.GetString(passwordHashOrdinal),
-                   reader.GetBoolean(isDeletedOrdinal)));
+                   reader.GetInt32(isDeletedOrdinal)));
             }
 
             return users;

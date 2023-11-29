@@ -10,7 +10,7 @@ namespace TimeBlockPlanner.Pages
         /// <summary>
         /// The timeblocks being displayed from the server to the user
         /// </summary>
-        public IEnumerable<Goals> Goals { get; set; }
+        public IEnumerable<Goal> Goals { get; set; }
 
         /// <summary>
         /// Cache Storage to retrieve the userId
@@ -51,7 +51,7 @@ namespace TimeBlockPlanner.Pages
 
             // This is where a call to the server will be made to get the information to display the data to the frontend user
             // new list<int> will be replaced with a call to the server for data.
-            this.Goals = new List<Goals>();
+            this.Goals = new List<Goal>();
         }
 
         /// <summary>

@@ -8,17 +8,17 @@ namespace UserData.Models
 {
     public class TimeBlock
     {
-        public int TimeBlockID { get; }
-        public int UserID { get; }
+        public int TimeBlockId { get; }
+        public int UserId { get; }
         public string Name { get; }
         public string Description { get; }
         public DateTime Date { get; }
-        private DateTimeOffset TimePeriod { get; }
+        public DateTimeOffset TimePeriod { get; }
 
         public TimeBlock(int timeBlockId, int userID, string name, string description, DateTime date, DateTimeOffset timeP)
         {
-            TimeBlockID = timeBlockId;
-            UserID = userID;
+            TimeBlockId = timeBlockId;
+            UserId = userID;
             Name = name;
             Description = description;
             Date = date;

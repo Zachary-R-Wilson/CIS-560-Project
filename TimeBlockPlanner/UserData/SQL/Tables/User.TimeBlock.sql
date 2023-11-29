@@ -14,7 +14,7 @@ BEGIN
          TimeBlockId ASC
       ),
 
-      CONSTRAINT FK_User_User_UserId FOREIGN KEY(UserId)
+      CONSTRAINT FK_User_TimeBlock_User_UserId FOREIGN KEY(UserId)
       REFERENCES [User].[User](UserId),
    );
 END
@@ -49,11 +49,11 @@ IF NOT EXISTS
       FROM sys.foreign_keys fk
       WHERE fk.parent_object_id = OBJECT_ID(N'[User].TimeBlock')
          AND fk.referenced_object_id = OBJECT_ID(N'[User].User')
-         AND fk.[name] = N'FK_User_User_UserId'
+         AND fk.[name] = N'FK_User_TimeBlock_User_UserId'
    )
 BEGIN
    ALTER TABLE [User].TimeBlock              
-   ADD CONSTRAINT [FK_User_User_UserId] FOREIGN KEY
+   ADD CONSTRAINT [FK_User_TimeBlock_User_UserId] FOREIGN KEY
    (
       UserId
    )
@@ -62,3 +62,5 @@ BEGIN
       UserId
    );
 END;
+
+

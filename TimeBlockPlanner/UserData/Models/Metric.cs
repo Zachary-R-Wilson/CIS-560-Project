@@ -8,12 +8,12 @@ namespace UserData.Models
 {
     public class Metric
     {
-        public int MetricID { get; }
+        public int MetricId { get; }
         public string Name { get; }
         public bool IsDeleted = false;
         public Metric(int metricID, string name, bool isDeleted)
         {
-            MetricID = metricID;
+            MetricId = metricID;
             Name = name;
             IsDeleted = isDeleted;
         }

@@ -12,4 +12,5 @@ INSERT [User].[User](Username, FirstName, LastName, Email, PasswordHash, IsDelet
 VALUES(@Username, @FirstName, @LastName, @Email, @PasswordHash, @IsDeleted);
 
 SET @UserId = SCOPE_IDENTITY();
+
 GO

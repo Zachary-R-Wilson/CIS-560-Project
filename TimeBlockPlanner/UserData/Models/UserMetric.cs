@@ -8,19 +8,23 @@ namespace UserData.Models
 {
     public class UserMetric 
     {
-        public int UserID { get; }
-        public MetricTimeFrame metricTimeFrame
+        public int UserId { get; }
+        public MetricTimeframe metricTimeframe
         {
             get;
         }
         public Metric metric { get; }
         public DateTime Date { get; }
-        public UserMetric(int userID, MetricTimeFrame metricTF, Metric _metric, DateTime date)
+
+        public int Value { get; }
+
+        public UserMetric(int userID, MetricTimeframe metricTf, Metric _metric, DateTime date, int value)
         {
-            UserID = userID;
-            metricTimeFrame = metricTF;
+            UserId = userID;
+            metricTimeframe = metricTf;
             metric = _metric;
             Date = date;
+            Value = value;
         }
     }
 }

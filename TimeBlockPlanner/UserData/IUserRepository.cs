@@ -47,6 +47,6 @@ namespace UserData
         /// <param name="lastName">Last name of the user</param>
         /// <param name="email">Email of the user</param>
         /// <returns>Returns the resulting new user objecct containing parameter defined attributes</returns>
-        User CreateUser(string firstName, string lastName, string email, string username, string passwordHash, bool isDeleted);
+        User CreateUser(string firstName, string lastName, string email, string username, string passwordHash, int isDeleted);
     }
 }

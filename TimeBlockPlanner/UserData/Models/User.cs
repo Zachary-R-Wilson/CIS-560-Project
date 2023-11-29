@@ -8,7 +8,7 @@ namespace UserData.Models
 {
     public class User
     {
-        public int UserID { get; }
+        public int UserId { get; }
 
         public string Username { get; }
 
@@ -20,11 +20,11 @@ namespace UserData.Models
 
         public string PasswordHash { get; }
 
-        public bool IsDeleted = false;
+        public int IsDeleted { get; }
 
-        public User(int userID, string un, string email, string fn, string ln, string passhash, bool isDeleted)
+        public User(int userID, string un, string email, string fn, string ln, string passhash, int isDeleted)
         {
-            UserID = userID;
+            UserId = userID;
             Username = un;
             Email = email;
             FirstName = fn;

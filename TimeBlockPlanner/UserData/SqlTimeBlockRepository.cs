@@ -65,7 +65,7 @@ namespace UserData
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                using (var command = new SqlCommand("User.RetrieveTimeBlock", connection))
+                using (var command = new SqlCommand("User.RetrieveTimeBlocksForUser", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 

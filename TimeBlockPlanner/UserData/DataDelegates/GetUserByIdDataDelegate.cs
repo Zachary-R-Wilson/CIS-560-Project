@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess;
+﻿using DataAccess;
 using UserData.Models;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace UserData.DataDelegates
 {
@@ -38,7 +34,7 @@ namespace UserData.DataDelegates
                reader.GetString("FirstName"),
                reader.GetString("LastName"),
                reader.GetString("PasswordHash"),
-               reader.GetBoolean("IsDeleted"));
+               reader.GetInt32("IsDeleted"));
         }
     }
 }

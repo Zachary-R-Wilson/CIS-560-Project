@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
+using UserData;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace TimeBlockPlanner.Pages
 {
@@ -9,8 +12,12 @@ namespace TimeBlockPlanner.Pages
         [BindProperty]
         public CreateUser CreateUser { get; set; }
 
+        private const string connectionString = @"Server=(localdb)\reaganlocal;Database=rphazell;Integrated Security=SSPI;";
+        private IUserRepository repo = new SqlUserRepository(connectionString);
+
         public void OnGet()
         {
+             
         }
 
         public void OnPost() 
@@ -26,10 +33,16 @@ namespace TimeBlockPlanner.Pages
             // Check that username/email is not already in use
 
             // Check all are filled out
-            if (ModelState.IsValid){}
-            else{}
-
-            // Insert into database
+            if (ModelState.IsValid)
+            {
+                using (var md5Hash = MD5.Create())
+                {
+                    var sourceBytes = Encoding.UTF8.GetBytes(CreateUser.password);
+                    var hashBytes = md5Hash.ComputeHash(sourceBytes);
+                    var hash = BitConverter.ToString(hashBytes).Replace("-", string.Empty);
+                    repo.CreateUser(CreateUser.firstName, CreateUser.lastName, CreateUser.email, CreateUser.username, hash, 1);
+                }
+            }
         }
     }
 }

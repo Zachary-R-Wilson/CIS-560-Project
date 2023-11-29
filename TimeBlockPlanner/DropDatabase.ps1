@@ -1,7 +1,7 @@
 [cmdletbinding()]
 Param(
-  [string] $Server = "(localdb)\MSSQLLocalDB",
-  [string] $Database
+  [string] $Server = "(localdb)\reaganlocal",
+  [string] $Database ## = "rphazell"
 )
 
 $Sql = @"

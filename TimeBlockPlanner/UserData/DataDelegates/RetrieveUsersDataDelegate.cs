@@ -28,7 +28,7 @@ namespace UserData.DataDelegates
                reader.GetString("FirstName"),
                reader.GetString("LastName"),
                reader.GetString("PasswordHash"),
-               reader.GetBoolean("IsDeleted")));
+               reader.GetInt32("IsDeleted")));
             }
             return users;
         }

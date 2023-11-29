@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UserData.Models;
+﻿using UserData.Models;
 using DataAccess;
+using System.Data;
+using System.Data.SqlClient;    // not sure why its not using this reference
 
 namespace UserData.DataDelegates
 {
@@ -17,11 +13,11 @@ namespace UserData.DataDelegates
         public readonly string firstName;
         public readonly string lastName;
         public readonly string passwordHash;
-        public readonly bool isDeleted;
+        public readonly int isDeleted;
 
 
-        public CreateUserDataDelegate(string userName, string email, string firstName, string lastName, string passwordHash, bool isDeleted)
-           : base("Person.CreatePerson")
+        public CreateUserDataDelegate(string userName, string email, string firstName, string lastName, string passwordHash, int isDeleted)
+           : base("Person.CreateUser")
         {
             this.userName = userName;
             this.email = email;
@@ -50,7 +46,7 @@ namespace UserData.DataDelegates
 
         public override User Translate(Command command)
         {
-            return new User(command.GetParameterValue<int>("PersonId"), userName, email, firstName, lastName, passwordHash, isDeleted);
+            return new User(command.GetParameterValue<int>("UserId"), userName, email, firstName, lastName, passwordHash, isDeleted);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE [User].RetrieveTimeBlockForUser
+﻿CREATE OR ALTER PROCEDURE [User].RetrieveTimeBlocksForUser
    @UserId INT
 AS
 

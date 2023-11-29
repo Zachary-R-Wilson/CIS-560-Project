@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace UserData.Models
 {
-    public class Goals
+    public class Goal
     {
-        public int GoalsID { get; }
-        public int UserID { get; }
+        public int GoalId { get; }
+        public int UserId { get; }
         public string Name { get; }
         public string Description { get; }
         public DateTime StartDate { get; }
         public DateTime EndDate { get; }
-        public bool IsComplete = false;
+        public int IsComplete { get; }
         public string Progress { get; }
 
-        public Goals(int goalsID, int userID, string name, string description, DateTime start, DateTime end, bool isComplete, string progress)
+        public Goal(int goalsID, int userID, string name, string description, DateTime start, DateTime end, int isComplete, string progress)
         {
-            GoalsID = goalsID;
-            UserID = userID;
+            GoalId = goalsID;
+            UserId = userID;
             Name = name;
             Description = description;
             StartDate = start;
