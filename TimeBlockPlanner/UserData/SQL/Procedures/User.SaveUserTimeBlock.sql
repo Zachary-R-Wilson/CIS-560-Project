@@ -1,17 +1,18 @@
-﻿CREATE OR ALTER PROCEDURE [User].SaveUserTimeBlock
-   @TimeBlockId INT,
+﻿
+CREATE OR ALTER PROCEDURE [User].SaveUserTimeBlock
    @UserId INT,
    @Name NVARCHAR(32),
    @Description NVARCHAR(32),
    @Date DATETIME,
-   @TimePeriod DATETIMEOFFSET
+   @TimePeriod DATETIMEOFFSET,
+   @TimeBlockId INT OUTPUT
 AS
 
 MERGE [User].TimeBlock T
 USING
       (
-         VALUES(@TimeBlockId, @UserId, @Name, @Description, @Date, @TimePeriod)
-      ) S(TimeBlockId, UserId, [Name], [Description], [Date], TimePeriod)
+         VALUES(@UserId, @Name, @Description, @Date, @TimePeriod, @TimeBlockId)
+      ) S(UserId, [Name], [Description], [Date], TimePeriod, TimeBlockId)
    ON S.UserId = T.UserId
 WHEN MATCHED AND NOT EXISTS
       (
@@ -26,6 +27,9 @@ WHEN MATCHED AND NOT EXISTS
       [Date] = S.[Date],
       Timeperiod = S.TimePeriod
 WHEN NOT MATCHED THEN
-   INSERT(TimeBlockId, UserId, [Name], [Description], [Date], TimePeriod)
-   VALUES(S.TimeBlockId, S.UserId, S.[Name], S.[Description], S.[Date], S.TimePeriod);
+   INSERT(UserId, [Name], [Description], [Date], TimePeriod)
+   VALUES(S.UserId, S.[Name], S.[Description], S.[Date], S.TimePeriod);
+
+    SET @TimeBlockId = SCOPE_IDENTITY();
 GO
+
