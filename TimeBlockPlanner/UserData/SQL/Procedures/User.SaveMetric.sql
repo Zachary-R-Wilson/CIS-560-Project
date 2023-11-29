@@ -1,27 +1,30 @@
 ﻿CREATE OR ALTER PROCEDURE [User].SaveMetric
-   @MetricId INT,
    @Name NVARCHAR(32),
-   @IsDeleted INT
-
+   @IsDeleted INT,
+   @MetricId INT OUTPUT
 AS
+
 
 MERGE [User].Metric M
 USING
       (
-         VALUES(@MetricId, @Name, @IsDeleted)
-      ) S(MetricId, [Name], IsDeleted)
+         VALUES(@Name, @IsDeleted, @MetricId)
+      ) S([Name], IsDeleted, MetricId)
    ON S.MetricId = M.MetricId
 WHEN MATCHED AND NOT EXISTS
       (
          SELECT S.[Name], S.IsDeleted
          INTERSECT
-         SELECT  M.[Name], TF.IsDeleted
+         SELECT  M.[Name], M.IsDeleted
       ) THEN
    UPDATE
    SET 
       [Name] = S.[Name],
       IsDeleted = S.IsDeleted
 WHEN NOT MATCHED THEN
-   INSERT(MetricId, [Name], IsDeleted)
-   VALUES(S.MetricId, S.[Name], S.IsDeleted);
+   INSERT([Name], IsDeleted)
+   VALUES(S.[Name], S.IsDeleted);
+
+    SET @MetricId = SCOPE_IDENTITY();
 GO
+

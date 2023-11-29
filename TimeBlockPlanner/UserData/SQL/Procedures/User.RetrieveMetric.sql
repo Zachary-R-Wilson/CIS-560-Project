@@ -1,4 +1,5 @@
-﻿CREATE OR ALTER PROCEDURE [User].RetrieveMetric
+﻿
+CREATE OR ALTER PROCEDURE [User].RetrieveMetric
 AS
 
 SELECT M.MetricId, M.[Name], M.IsDeleted
