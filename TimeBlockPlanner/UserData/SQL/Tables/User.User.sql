@@ -1,4 +1,5 @@
-﻿IF OBJECT_ID(N'User.User') IS NULL
+﻿
+IF OBJECT_ID(N'User.User') IS NULL
 BEGIN
    CREATE TABLE [User].[User]
    (
@@ -54,3 +55,12 @@ BEGIN
       FirstName > N'' OR LastName > N''
    )
 END;
+
+
+
+
+SELECT * 
+FROM sys.foreign_keys
+WHERE referenced_object_id = object_id('User.User') 
+
+

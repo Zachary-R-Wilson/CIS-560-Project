@@ -1,4 +1,5 @@
-﻿IF OBJECT_ID(N'User.Metric') IS NULL
+﻿
+IF OBJECT_ID(N'User.Metric') IS NULL
 BEGIN
    CREATE TABLE [User].Metric
    (
@@ -33,3 +34,5 @@ BEGIN
       [Name]
    )
 END;
+
+

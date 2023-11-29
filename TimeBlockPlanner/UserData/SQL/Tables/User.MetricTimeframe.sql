@@ -1,4 +1,5 @@
-﻿IF OBJECT_ID(N'User.MetricTimeframe') IS NULL
+﻿
+IF OBJECT_ID(N'User.MetricTimeframe') IS NULL
 BEGIN
    CREATE TABLE [User].MetricTimeframe
    (
@@ -33,3 +34,4 @@ BEGIN
       [Name]
    )
 END;
+

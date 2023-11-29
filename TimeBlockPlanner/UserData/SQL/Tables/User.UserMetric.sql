@@ -1,4 +1,5 @@
-﻿IF OBJECT_ID(N'User.UserMetric') IS NULL
+﻿
+IF OBJECT_ID(N'User.UserMetric') IS NULL
 BEGIN
    CREATE TABLE [User].UserMetric
    (
@@ -51,11 +52,11 @@ IF NOT EXISTS
       FROM sys.foreign_keys fk
       WHERE fk.parent_object_id = OBJECT_ID(N'[User].UserMetric')
          AND fk.referenced_object_id = OBJECT_ID(N'[User].User')
-         AND fk.[name] = N'FK_User_User_UserId'
+         AND fk.[name] = N'FK_User_UserMetric_User_UserId'
    )
 BEGIN
    ALTER TABLE [User].UserMetric              
-   ADD CONSTRAINT [FK_User_User_UserId] FOREIGN KEY
+   ADD CONSTRAINT [FK_User_UserMetric_User_UserId] FOREIGN KEY
    (
       UserId
    )
@@ -104,3 +105,5 @@ BEGIN
       MetricId
    );
 END;
+
+
