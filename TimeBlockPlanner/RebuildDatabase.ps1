@@ -54,6 +54,14 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\S
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveUsers.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.SaveGoalForUser.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveGoalsForUser.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.SaveMetricTimeframe.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveMetricTimeframe.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveMetric.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.SaveMetric.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveUserMetricsForUser.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.SaveUserMetricForUser.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveUserMetricsForUser.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.CreateMetricTimeframe.sql"
 
 
 

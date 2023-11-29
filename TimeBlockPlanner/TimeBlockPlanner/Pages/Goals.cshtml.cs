@@ -12,7 +12,7 @@ namespace TimeBlockPlanner.Pages
         private IGoalRepository repo = new SqlGoalRepository(connectionString);
 
         /// <summary>
-        /// The timeblocks being displayed from the server to the user
+        /// The Goal being displayed from the server to the user
         /// </summary>
         public IEnumerable<Goal> Goals { get { return repo.RetrieveGoals(UserId); } }
 

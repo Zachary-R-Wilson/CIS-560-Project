@@ -9,11 +9,11 @@ using UserData.Models;
 
 namespace UserData
 {
-    public class SqlUserMetricRpository : IUserMetricRepository
+    public class SqlUserMetricRepository : IUserMetricRepository
     {
         private readonly SqlCommandExecutor executor;
 
-        public SqlUserMetricRpository(string connectionString)
+        public SqlUserMetricRepository(string connectionString)
         {
             executor = new SqlCommandExecutor(connectionString);
         }
