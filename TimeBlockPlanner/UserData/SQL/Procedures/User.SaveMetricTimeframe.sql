@@ -1,15 +1,16 @@
-﻿CREATE OR ALTER PROCEDURE [User].SaveMetricTimeframe
-   @MetricTimeframeId INT,
+﻿
+CREATE OR ALTER PROCEDURE [User].SaveMetricTimeframe
    @Name NVARCHAR(32),
-   @IsDeleted INT
-
+   @IsDeleted INT,
+   @MetricTimeframeId INT OUTPUT
 AS
+
 
 MERGE [User].MetricTimeframe TF
 USING
       (
-         VALUES(@MetricTimeframeId, @Name, @IsDeleted)
-      ) S(MetricTimeframeId, [Name], IsDeleted)
+         VALUES(@Name, @IsDeleted, @MetricTimeframeId)
+      ) S([Name], IsDeleted, MetricTimeframeId)
    ON S.MetricTimeframeId = TF.MetricTimeframeId
 WHEN MATCHED AND NOT EXISTS
       (
@@ -22,6 +23,8 @@ WHEN MATCHED AND NOT EXISTS
       [Name] = S.[Name],
       IsDeleted = S.IsDeleted
 WHEN NOT MATCHED THEN
-   INSERT(MetricTimeframeId, [Name], IsDeleted)
-   VALUES(S.MetricTimeframeId, S.[Name], S.IsDeleted);
+   INSERT([Name], IsDeleted)
+   VALUES(S.[Name], S.IsDeleted);
+
+    SET @MetricTimeframeId = SCOPE_IDENTITY();
 GO
