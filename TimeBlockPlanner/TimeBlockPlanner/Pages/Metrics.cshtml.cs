@@ -1,23 +1,39 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Caching.Memory;
+using UserData;
 using UserData.Models;
 
 namespace TimeBlockPlanner.Pages
 {
     public class MetricsModel : PageModel
     {
+        [BindProperty]
+        public MetricTimeframeForm MetricTimeframe { get; set; }
+
+        [BindProperty]
+        public UserMetricForm UserMetric { get; set; }
+
+        private const string connectionString = @"Server=(localdb)\reaganlocal;Database=rphazell;Integrated Security=SSPI;";
+        private IUserMetricRepository UserMetricRepo = new SqlUserMetricRepository(connectionString);
+        private IMetricTimeframeRepository MetricTimeframeRepo = new SqlMetricTimeframeRepository(connectionString);
+
         /// <summary>
         /// The metrics being displayed from the server to the user
         /// </summary>
-        public IEnumerable<UserMetric> UMetrics { get; set; }
+        public IEnumerable<UserMetric> UMetrics { get { return UserMetricRepo.RetrieveUserMetrics(UserId); } }
+
+        /// <summary>
+        /// The metricTimeframes being displayed from the server to the user
+        /// </summary>
+        public IEnumerable<MetricTimeframe> MetricTimeframes { get { return MetricTimeframeRepo.RetrieveAllMetricTimeframes(); } }
 
         /// <summary>
         /// Cache Storage to retrieve the userId
         /// </summary>
         private readonly IMemoryCache _cache;
 
-        public int userId
+        public int UserId
         {
             get
             {
@@ -48,25 +64,27 @@ namespace TimeBlockPlanner.Pages
                 Response.Redirect("SignIn");
             }
             _cache.Get("");
-
-            // This is where a call to the server will be made to get the information to display the data to the frontend user
-            // new list<int> will be replaced with a call to the server for data.
-            this.UMetrics = new List<UserMetric>();
         }
 
         /// <summary>
         /// Method to handle post requests on the page
         /// </summary>
-        public void OnPost(int? TimeframeId, int? MetricId, DateTime Date, string name, string value)
+        public void OnPostMetric()
         {
-            // When a post is made, we are either updating a current row
-            // or we are inserting a new row into the database.
-            // A row is to be updated if there is a TimeBlockId, otherwise it should be inserted
+            Console.WriteLine(UserMetric.metricName);
+            //Console.WriteLine($"{TimeframeId.ToString()}, {MetricId.ToString()}, {name}, {Date.ToString()}, {value}");
+        }
 
-            Console.WriteLine($"{TimeframeId.ToString()}, {MetricId.ToString()}, {name}, {Date.ToString()}, {value}");
-
-            // A return query will be required to display the back to the user and update the table
-            //insert or update the row in the table
+        public void OnPostMetricTimeframe()
+        {
+            if (MetricTimeframe.IsDeleted)
+            {
+                MetricTimeframeRepo.CreateMetricTimeframe(MetricTimeframe.name, 0);
+            }
+            else
+            {
+                MetricTimeframeRepo.CreateMetricTimeframe(MetricTimeframe.name, 1);
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ IF OBJECT_ID(N'User.User') IS NULL
 BEGIN
    CREATE TABLE [User].[User]
    (
-      UserId INT NOT NULL IDENTITY(1, 1) ,
+      UserId INT NOT NULL IDENTITY(1, 1),
       Username  NVARCHAR(128) NOT NULL,
       Email NVARCHAR(128) NOT NULL,
       FirstName NVARCHAR(32) NOT NULL,

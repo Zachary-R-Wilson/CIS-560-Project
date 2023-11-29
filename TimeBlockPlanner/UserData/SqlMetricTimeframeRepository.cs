@@ -21,7 +21,7 @@ namespace UserData
             executor = new SqlCommandExecutor(connectionString);
         }
 
-        public MetricTimeframe CreateMetricTimeframe(string name, int isDeleted)
+        public void CreateMetricTimeframe(string name, int isDeleted)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(name));
@@ -30,7 +30,7 @@ namespace UserData
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(isDeleted));
 
             var d = new CreateMetricTimeframeDataDelegate(name, isDeleted);
-            return executor.ExecuteNonQuery(d);
+            executor.ExecuteNonQuery(d);
         }
 
         /* REAGAN FIX
@@ -41,9 +41,16 @@ namespace UserData
         }
 
         */
-        public IReadOnlyList<MetricTimeframe> RetrieveMetricTimeframes()   
+        public IReadOnlyList<MetricTimeframe> RetrieveAllMetricTimeframes()   
         {
             return executor.ExecuteReader(new RetrieveMetricTimeframesDataDelegate());
+        }
+
+        public IReadOnlyList<MetricTimeframe> RetrieveMetricTimeframes(int metricTimeframeId)
+        {
+            //return executor.ExecuteReader(new RetrieveMetricTimeframesDataDelegate());
+            var d = new RetrieveMetricTimeframesDataDelegate();
+            return executor.ExecuteReader(d);
         }
     }
 }

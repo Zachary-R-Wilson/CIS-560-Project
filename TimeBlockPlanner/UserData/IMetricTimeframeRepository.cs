@@ -7,8 +7,13 @@ using UserData.Models;
 
 namespace UserData
 {
-    public class IMetricTimeframeRepository
+    public interface IMetricTimeframeRepository
     {
+        IReadOnlyList<MetricTimeframe> RetrieveMetricTimeframes(int metricTimeframeId);
+
+        IReadOnlyList<MetricTimeframe> RetrieveAllMetricTimeframes();
+
+        void CreateMetricTimeframe(string name, int isDeleted);
 
         /* REAGAN FIX
         IReadOnlyList<MetricTimeframe> RetrieveMetricTimeframes();

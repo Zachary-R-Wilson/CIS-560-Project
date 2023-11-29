@@ -3,7 +3,7 @@ IF OBJECT_ID(N'User.MetricTimeframe') IS NULL
 BEGIN
    CREATE TABLE [User].MetricTimeframe
    (
-      MetricTimeframeId INT NOT NULL,
+      MetricTimeframeId INT NOT NULL IDENTITY(1, 1),
       [Name] NVARCHAR(32) NOT NULL,
       IsDeleted INT NOT NULL
 
