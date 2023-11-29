@@ -11,7 +11,7 @@ USING
       (
          VALUES(@UserId, @MetricTimeframeId, @MetricId, @Date, @Value)
       ) S(UserId, MetricTimeframeId, MetricId, [Date], [Value])
-   ON S.UserId = UM.UserId
+   ON S.UserId = UM.UserId AND S.MetricId = UM.MetricId AND S.MetricTimeframeId = UM.MetricTimeframeId
 WHEN MATCHED AND NOT EXISTS
       (
          SELECT S.[Date], S.[Value]
@@ -26,3 +26,4 @@ WHEN NOT MATCHED THEN
    INSERT(UserId, MetricTimeframeId, MetricId, [Date], [Value])
    VALUES(S.UserId, S.MetricTimeframeId, S.MetricId, S.[Date], S.[Value]);
 GO
+

@@ -10,8 +10,8 @@ namespace UserData.Models
     {
         public int MetricId { get; }
         public string Name { get; }
-        public bool IsDeleted = false;
-        public Metric(int metricID, string name, bool isDeleted)
+        public int IsDeleted { get; }
+        public Metric(int metricID, string name, int isDeleted)
         {
             MetricId = metricID;
             Name = name;
