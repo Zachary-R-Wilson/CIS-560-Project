@@ -1,5 +1,5 @@
-﻿CREATE OR ALTER PROCEDURE [User].GetMetricTimeframeNameFromId
-   @MetricTimeframeId INT
+﻿CREATE OR ALTER PROCEDURE [User].GetMetricTimeframeIdGivenName
+   @Name NVARCHAR(128)
 AS
 
 SELECT  TF.MetricTimeframeId
