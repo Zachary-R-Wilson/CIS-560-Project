@@ -10,12 +10,12 @@ Welcome to our Time Block Planner! This is a useful time management tool allowin
 
 In order to run this application for testing purposes on a local machine please ensure you follow the following steps in order to successfully connecct your local database to the front end of the application. 
 
-      ### Steps :
-      1.) Ensure that all instances of the 'connectionString' variable are altered in alignment with the following format : 
+### Steps :
+1.) Ensure that all instances of the 'connectionString' variable are altered in alignment with the following format : 
       
             @"Server=(localdb)\[Local_Database_Server_Name];Database=[Local_Database_Name];Integrated Security=SSPI;"
 
             
-      2.) Ensure all Server declaration statements in the solution are altered in alignment with the following format :
+2.) Ensure all Server declaration statements in the solution are altered in alignment with the following format :
       
             $Server = "(localdb)\[Local_Database_Server_Name]"
