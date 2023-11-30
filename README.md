@@ -10,4 +10,4 @@ Welcome to our Time Block Planner! This is a useful time management tool allowin
 
 In order to run this application for testing purposes on a local machine please ensure you follow the following steps in order to successfully connecct your local database to the front end of the application. 
 
-### Steps :
+      ### Steps :
