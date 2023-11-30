@@ -22,4 +22,5 @@ In order to run this application for testing purposes on a local machine please 
 
 3.) Ensure that the RebuildDatabase.ps1, located in the SolutionItems folder, is run through the PowerShell prompt and indicates completion of scripts without errors.
 Help : In the case the PowerShell prompt indicated an error running the script "...not digitally signed", run the following command to resolve the error and complete the rebuild : 
-            Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+            ## Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
