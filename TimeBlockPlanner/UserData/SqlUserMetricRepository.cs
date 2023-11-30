@@ -36,6 +36,5 @@ namespace UserData
             var d = new RetrieveUserMetricsForUserDataDelegate(userId);
             return executor.ExecuteReader(d);
         }
-
     }
 }

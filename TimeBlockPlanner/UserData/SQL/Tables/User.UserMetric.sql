@@ -11,7 +11,7 @@ BEGIN
 
       CONSTRAINT FK_User_User_UserId FOREIGN KEY(UserId)
       REFERENCES [User].[User](UserId),
-      
+   
       CONSTRAINT FK_User_MetricTimeframe_MetricTimeframeId FOREIGN KEY(MetricTimeframeId)
       REFERENCES [User].[MetricTimeframe](MetricTimeframeId),
 
@@ -104,6 +104,7 @@ BEGIN
    (
       MetricId
    );
+
 END;
 
 
