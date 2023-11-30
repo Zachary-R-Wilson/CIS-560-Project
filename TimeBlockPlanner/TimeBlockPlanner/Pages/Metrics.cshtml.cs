@@ -72,18 +72,11 @@ namespace TimeBlockPlanner.Pages
         /// </summary>
         public void OnPostMetric(int metricTimeframeId, int metricId, string metricName, string metricTimeframeName, DateTime date, int value)
         {
-            Console.WriteLine($"{metricTimeframeId}, {metricId}, {metricName}, {metricTimeframeName}, {date}, {value}");
-
-            //create Metric
             Metric m = MetricRepositoryRepo.CreateMetric(metricName, 1);
-
-            //Retrieve MetrictimeframeId
             MetricTimeframe mtf = MetricTimeframeRepo.GetMetricTimeframeIdGivenName(metricTimeframeName);
-
-            //Create new metricRepo
             UserMetricRepo.SaveUserMetric(UserId, mtf.MetricTimeframeId, m.MetricId, date, value);
         }
-
+         
         public void OnPostMetricTimeframe()
         {
             if (MetricTimeframe.IsDeleted)

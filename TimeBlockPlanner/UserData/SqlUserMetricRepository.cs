@@ -30,7 +30,12 @@ namespace UserData
             var d = new RetrieveUserMetricsForUserDataDelegate(userId);
             return executor.ExecuteReader(d);
         }
+
+        public IReadOnlyList<UserMetricFront> RetrieveUserMetricsFront(int userId)
+        {
+            var d = new RetrieveUserMetricsForUserDataDelegate(userId);
+            return executor.ExecuteReader(d);
+        }
+
     }
 }
-
-

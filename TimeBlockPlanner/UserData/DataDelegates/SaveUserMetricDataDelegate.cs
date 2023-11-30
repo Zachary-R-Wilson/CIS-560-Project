@@ -17,7 +17,7 @@ namespace UserData.DataDelegates
         private readonly int value;
 
         public SaveUserMetricDataDelegate(int userId, int metricTimeframeId, int metricId, DateTime date, int value)
-           : base("User.SaveUserTimeBlock")
+           : base("User.SaveUserMetric")
         {
             this.userId = userId;
             this.metricTimeframeId = metricTimeframeId;

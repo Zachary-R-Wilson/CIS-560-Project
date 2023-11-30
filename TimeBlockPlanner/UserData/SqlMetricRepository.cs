@@ -20,7 +20,7 @@ namespace UserData
 
         public SqlMetricRepository(string connectionString)
         {
-            executor = new SqlCommandExecutor(connectionString);
+            this.connectionString = connectionString;
         }
 
         public Metric CreateMetric(string name, int isDeleted)

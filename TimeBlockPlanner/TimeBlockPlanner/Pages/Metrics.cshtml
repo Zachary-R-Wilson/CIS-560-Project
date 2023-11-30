@@ -92,46 +92,31 @@
                     Value
                 </th>
             </tr>
-            @* Example of the layout *@
-            <tr onclick="EditRow(this)">
-                <td style="display:none;">
-                    1
-                </td>
-                <td style="display:none;">
-                    1
-                </td>
-                <td>
-                    Weekly Workouts
-                </td>
-                <td onclick="EditType(this.parentElement)">
-                    Hours
-                </td>
-                <td>
-                    @DateTime.Now
-                </td>
-                <td>
-                    2
-                </td>
-            </tr>
 
             @* -- This will be used to create the table on the page -- *@
-            @*@foreach (UserData.Models.UserMetric userMetric in Model.UMetrics)
+            @foreach (UserData.Models.UserMetric userMetric in Model.UMetrics)
             {
                 <tr onclick="EditRow(this)">
                     <td style="display:none;">
-                        @userMetric.metricTimeFrame.MetricTimeFrameID
+                        @userMetric.metricTimeframe.MetricTimeframeId
                     </td>
-                    <td>
-                        @userMetric.metric.MetricID
+                    <td style ="display:none;">
+                        @userMetric.metric.MetricId
                     </td>
                     <td>
                         @userMetric.metric.Name
                     </td>
                     <td>
+                        @userMetric.metricTimeframe.Name
+                    </td>
+                    <td>
                         @userMetric.Date
                     </td>
+                    <td>
+                        @userMetric.Value
+                    </td>
                 </tr>
-            } *@
+            }
 
 
         </table>
