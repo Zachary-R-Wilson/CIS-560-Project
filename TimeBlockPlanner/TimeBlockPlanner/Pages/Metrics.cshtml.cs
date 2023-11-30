@@ -78,10 +78,10 @@ namespace TimeBlockPlanner.Pages
             //SqlMetricRepositoryRepo.create
 
             //Retrieve MetrictimeframeId
-            //MetricTimeframeRepo.
-
+            MetricTimeframe mtf = MetricTimeframeRepo.GetMetricTimeframeIdGivenName(metricTimeframeName);
+            Console.WriteLine(mtf.MetricTimeframeId);
             //Create new metricRepo
-            //UserMetricRepo.SaveUserMetric(UserId, metricTimeframeId, metricId, date, value);
+            //UserMetricRepo.SaveUserMetric(UserId, mtf.MetricTimeframeId, metricId, date, value);
         }
 
         public void OnPostMetricTimeframe()
