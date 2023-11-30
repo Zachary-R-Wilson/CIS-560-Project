@@ -17,7 +17,6 @@ namespace UserData
 
         MetricTimeframe GetMetricTimeframeIdGivenName(string name);
 
-        
     }
 }
 

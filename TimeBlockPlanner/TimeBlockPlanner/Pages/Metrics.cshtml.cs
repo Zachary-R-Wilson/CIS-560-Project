@@ -17,7 +17,7 @@ namespace TimeBlockPlanner.Pages
         private const string connectionString = @"Server=(localdb)\reaganlocal;Database=rphazell;Integrated Security=SSPI;";
         private IUserMetricRepository UserMetricRepo = new SqlUserMetricRepository(connectionString);
         private IMetricTimeframeRepository MetricTimeframeRepo = new SqlMetricTimeframeRepository(connectionString);
-        private IMetricRepository SqlMetricRepositoryRepo = new SqlMetricRepository(connectionString);
+        private IMetricRepository MetricRepositoryRepo = new SqlMetricRepository(connectionString);
 
         /// <summary>
         /// The metrics being displayed from the server to the user
@@ -75,13 +75,13 @@ namespace TimeBlockPlanner.Pages
             Console.WriteLine($"{metricTimeframeId}, {metricId}, {metricName}, {metricTimeframeName}, {date}, {value}");
 
             //create Metric
-            //SqlMetricRepositoryRepo.create
+            Metric m = MetricRepositoryRepo.CreateMetric(metricName, 1);
 
             //Retrieve MetrictimeframeId
             MetricTimeframe mtf = MetricTimeframeRepo.GetMetricTimeframeIdGivenName(metricTimeframeName);
-            Console.WriteLine(mtf.MetricTimeframeId);
+
             //Create new metricRepo
-            //UserMetricRepo.SaveUserMetric(UserId, mtf.MetricTimeframeId, metricId, date, value);
+            UserMetricRepo.SaveUserMetric(UserId, mtf.MetricTimeframeId, m.MetricId, date, value);
         }
 
         public void OnPostMetricTimeframe()
