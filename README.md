@@ -12,7 +12,10 @@ In order to run this application for testing purposes on a local machine please 
 
       ### Steps :
       1.) Ensure that all instances of the 'connectionString' variable are altered in alignment with the following format : 
+      
             @"Server=(localdb)\[Local_Database_Server_Name];Database=[Local_Database_Name];Integrated Security=SSPI;"
+
             
       2.) Ensure all Server declaration statements in the solution are altered in alignment with the following format :
-            $Server = "(localdb)\[Local_Database_Server_Name]",
+      
+            $Server = "(localdb)\[Local_Database_Server_Name]"
