@@ -14,6 +14,8 @@ namespace UserData
 {
     public class SqlMetricRepository : IMetricRepository
     {
+        private readonly string connectionString;
+
         private readonly SqlCommandExecutor executor;
 
         public SqlMetricRepository(string connectionString)
@@ -21,7 +23,7 @@ namespace UserData
             executor = new SqlCommandExecutor(connectionString);
         }
 
-        public User CreateMetric(string name, int isDeleted)
+        public Metric CreateMetric(string name, int isDeleted)
         {
             // Verify parameters.
             if (string.IsNullOrWhiteSpace(name))
@@ -35,18 +37,13 @@ namespace UserData
             {
                 using (var connection = new SqlConnection(connectionString))
                 {
-                    using (var command = new SqlCommand("User.CreateUser", connection))
+                    using (var command = new SqlCommand("User.CreateMetric", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("FirstName", firstName);
-                        command.Parameters.AddWithValue("LastName", lastName);
-                        command.Parameters.AddWithValue("Email", email);
-                        command.Parameters.AddWithValue("Username", username);
-                        command.Parameters.AddWithValue("PasswordHash", passwordHash);
+                        command.Parameters.AddWithValue("Name", name);
                         command.Parameters.AddWithValue("IsDeleted", isDeleted);
-
-                        var u = command.Parameters.Add("UserId", SqlDbType.Int);
+                        var u = command.Parameters.Add("MetricId", SqlDbType.Int);
                         u.Direction = ParameterDirection.Output;
 
                         connection.Open();
@@ -55,9 +52,9 @@ namespace UserData
 
                         transaction.Complete();
 
-                        var userId = (int)command.Parameters["UserId"].Value;
+                        var metricId = (int)command.Parameters["MetricId"].Value;
 
-                        return new User(userId, firstName, lastName, email, username, passwordHash, isDeleted);
+                        return new Metric(metricId, name, isDeleted);
                     }
                 }
             }
