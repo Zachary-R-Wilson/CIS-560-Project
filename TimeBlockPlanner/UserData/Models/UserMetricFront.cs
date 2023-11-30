@@ -8,6 +8,7 @@ namespace UserData.Models
 {
     public class UserMetricFront
     {
+
         public int UserId { get; set; }
 
         public int MetricTimeframeId { get; set; }
@@ -21,5 +22,18 @@ namespace UserData.Models
         public DateTime Date { get; set; }
 
         public int Value { get; set; }
+
+
+        public UserMetricFront(int userId, int metricTimeframeId, int metricId, string metricName, string metricTimeframeName, DateTime date, int value)
+        {
+            UserId = userId;
+            MetricTimeframeId = metricTimeframeId;
+            MetricId = metricId;
+            MetricName = metricName;
+            MetricTimeframeName = metricTimeframeName;
+            Date = date;
+            Value = value;
+
+        }
     }
 }

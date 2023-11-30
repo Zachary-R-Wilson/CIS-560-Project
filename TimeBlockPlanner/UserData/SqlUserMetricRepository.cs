@@ -33,7 +33,7 @@ namespace UserData
 
         public IReadOnlyList<UserMetricFront> RetrieveUserMetricsFront(int userId)
         {
-            var d = new RetrieveUserMetricsForUserDataDelegate(userId);
+            var d = new RetrieveUserMetricsFrontDataDelegate(userId);
             return executor.ExecuteReader(d);
         }
     }
