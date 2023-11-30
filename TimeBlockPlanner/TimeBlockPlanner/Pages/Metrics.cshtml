@@ -94,26 +94,26 @@
             </tr>
 
             @* -- This will be used to create the table on the page -- *@
-            @foreach (UserData.Models.UserMetric userMetric in Model.UMetrics)
+            @foreach (UserData.Models.UserMetricFront userMetricFront in Model.UMetrics)
             {
                 <tr onclick="EditRow(this)">
                     <td style="display:none;">
-                        @userMetric.metricTimeframe.MetricTimeframeId
+                        @userMetricFront.MetricTimeframeId
                     </td>
                     <td style ="display:none;">
-                        @userMetric.metric.MetricId
+                        @userMetricFront.MetricId
                     </td>
                     <td>
-                        @userMetric.metric.Name
+                        @userMetricFront.MetricName
                     </td>
                     <td>
-                        @userMetric.metricTimeframe.Name
+                        @userMetricFront.MetricTimeframeName
                     </td>
                     <td>
-                        @userMetric.Date
+                        @userMetricFront.Date.ToString("yyyy-MM-dd")
                     </td>
                     <td>
-                        @userMetric.Value
+                        @userMetricFront.Value
                     </td>
                 </tr>
             }

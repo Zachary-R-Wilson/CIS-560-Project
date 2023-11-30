@@ -22,7 +22,7 @@ namespace TimeBlockPlanner.Pages
         /// <summary>
         /// The metrics being displayed from the server to the user
         /// </summary>
-        public IEnumerable<UserMetric> UMetrics { get { return UserMetricRepo.RetrieveUserMetrics(UserId); } }
+        public IEnumerable<UserMetricFront> UMetrics { get { return UserMetricRepo.RetrieveUserMetricsFront(UserId); } }
 
         /// <summary>
         /// The metricTimeframes being displayed from the server to the user

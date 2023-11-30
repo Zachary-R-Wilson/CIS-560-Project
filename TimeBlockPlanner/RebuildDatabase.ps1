@@ -64,6 +64,8 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\S
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.CreateMetricTimeframe.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.GetMetricTimeframeIdGivenName.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.CreateMetric.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "UserData\Sql\Procedures\User.RetrieveUserMetricFront.sql"
+
 
 
 

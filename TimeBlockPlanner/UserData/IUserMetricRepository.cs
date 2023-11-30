@@ -11,6 +11,9 @@ namespace UserData
     {
         IReadOnlyList<UserMetric> RetrieveUserMetrics(int userId);
 
+        IReadOnlyList<UserMetricFront> RetrieveUserMetricsFront(int userId);
+
+
         void SaveUserMetric(int userId, int metricTimeframeId, int metricId, DateTime date, int value);
     }
 }
