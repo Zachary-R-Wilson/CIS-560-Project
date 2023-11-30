@@ -7,7 +7,7 @@ using UserData.Models;
 
 namespace UserData
 {
-    internal interface IMetricRepository
+    public interface IMetricRepository
     {
 
         Metric RetrieveMetric(int metricId);
