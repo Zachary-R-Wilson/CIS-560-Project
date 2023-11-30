@@ -33,14 +33,7 @@ namespace UserData
             executor.ExecuteNonQuery(d);
         }
 
-        /* REAGAN FIX
-        public MetricTimeframe RetrieveMetricTimeframe(int metricTimeframeId)
-        {
-            var d = new RetrieveMetricTimeframesDataDelegate();
-            return executor.ExecuteReader(d);
-        }
-
-        */
+        
         public IReadOnlyList<MetricTimeframe> RetrieveAllMetricTimeframes()   
         {
             return executor.ExecuteReader(new RetrieveMetricTimeframesDataDelegate());
@@ -52,6 +45,20 @@ namespace UserData
             var d = new RetrieveMetricTimeframesDataDelegate();
             return executor.ExecuteReader(d);
         }
+
+        public void SaveMetricTimeframe(int metricTimeframeId, string name, int isComplete)
+        {
+            if (name == null)
+                throw new ArgumentNullException(nameof(name));
+
+            if (isComplete != 0 && isComplete != 1)
+                throw new ArgumentNullException(nameof(isComplete));
+
+
+            var d = new SaveMetricTimeframeDataDelegate(metricTimeframeId, name, isComplete);
+            executor.ExecuteNonQuery(d);
+        }
+
 
 
         public MetricTimeframe GetMetricTimeframeIdGivenName(string name)
