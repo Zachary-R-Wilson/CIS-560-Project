@@ -6,4 +6,8 @@ An application demonstrating proficiency with databases.
 Welcome to our Time Block Planner! This is a useful time management tool allowing users to create various personal and professional metrics, goals, and timeblocks which you can align with your busy schedule, due dates, or personal goals. The application tracks your progress and stores all upcoming goals or timeblocks and their respective dates. The Time Block Planner takes the stress and burden of time management and organization off your back allowing you to be your most productive self! 
 
 
-## 
+## Instructions 
+
+In order to run this application for testing purposes on a local machine please ensure you follow the following steps in order to successfully connecct your local database to the front end of the application. 
+
+### Steps :
