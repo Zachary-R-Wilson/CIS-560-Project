@@ -2,7 +2,7 @@
    @Name NVARCHAR(128)
 AS
 
-SELECT  TF.MetricTimeframeId
+SELECT  TF.MetricTimeframeId, TF.[Name], TF.IsDeleted
 FROM [User].MetricTimeframe TF
 WHERE TF.[Name] = @Name;
 GO

@@ -14,6 +14,9 @@ namespace UserData
 
         void SaveMetric(int metricId, string name, int isDeleted);
 
+        Metric CreateMetric(string name, int isDeleted);
+
+
     }
 
 

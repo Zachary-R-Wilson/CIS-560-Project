@@ -15,15 +15,9 @@ namespace UserData
 
         void CreateMetricTimeframe(string name, int isDeleted);
 
-        /* REAGAN FIX
-        IReadOnlyList<MetricTimeframe> RetrieveMetricTimeframes();
+        MetricTimeframe GetMetricTimeframeIdGivenName(string name);
 
-       
-        MetricTimeframe RetrieveMetricTimeframe(int metricTimeframeId);
-
-        MetricTimeframe CreateMetricTimeframe(string name, int isDeleted);
-
-        */
+        
     }
 }
 

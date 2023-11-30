@@ -52,5 +52,11 @@ namespace UserData
             var d = new RetrieveMetricTimeframesDataDelegate();
             return executor.ExecuteReader(d);
         }
+
+
+        public MetricTimeframe GetMetricTimeframeIdGivenName(string name)
+        {
+            return executor.ExecuteReader(new GetMetricTimeframeIdGivenNameDelegate(name));
+        }
     }
 }
