@@ -1,5 +1,5 @@
 # Timeblock Planner
-An application demonstrating proficiency with databases.
+A web application demonstrating proficiency with databases.
 
 
 ## Description 
